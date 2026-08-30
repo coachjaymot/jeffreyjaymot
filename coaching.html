@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coaching & Athletics | Jeffrey Jaymot</title>
+
+    <meta name="description"
+        content="Coaching and athletic background of Jeffrey Jaymot, including tennis, basketball, athletic administration, youth development, collegiate coaching, and community sport programming.">
+
+    <style>
+        /* ===============================
+           RESET
+        =============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===============================
+           GLOBAL
+        =============================== */
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f7f7;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            max-width: 780px;
+            color: #60646c;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
+        }
+
+        /* ===============================
+           NAVIGATION
+        =============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* ===============================
+           HERO
+        =============================== */
+
+        .page-hero {
+            padding: 120px 0 100px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #737373;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 28px;
+            max-width: 950px;
+        }
+
+        .page-hero p {
+            max-width: 820px;
+            font-size: 1.2rem;
+            color: #5f6368;
+        }
+
+        /* ===============================
+           OVERVIEW
+        =============================== */
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .overview-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+        }
+
+        .overview-content p {
+            color: #51555a;
+            font-size: 1.05rem;
+            margin-bottom: 22px;
+        }
+
+        /* ===============================
+           SPORTS
+        =============================== */
+
+        .sport-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .sport-card {
+            padding: 34px;
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .sport-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+        .sport-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .sport-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ===============================
+           COACHING TIMELINE
+        =============================== */
+
+        .timeline {
+            max-width: 940px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .timeline-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.18rem;
+            margin-bottom: 4px;
+        }
+
+        .timeline-content h4 {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #686868;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ===============================
+           COACHING PHILOSOPHY
+        =============================== */
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .philosophy-card {
+            border-top: 3px solid #222;
+            padding-top: 20px;
+        }
+
+        .philosophy-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+        }
+
+        .philosophy-card p {
+            color: #666;
+            font-size: 0.94rem;
+        }
+
+        /* ===============================
+           HIGHLIGHTS
+        =============================== */
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .highlight {
+            padding-right: 20px;
+        }
+
+        .highlight-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 7px;
+        }
+
+        .highlight-label {
+            color: #666;
+            font-size: 0.92rem;
+        }
+
+        /* ===============================
+           ATHLETIC BACKGROUND
+        =============================== */
+
+        .athlete-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .athlete-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+        }
+
+        .athlete-content p {
+            color: #51555a;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        /* ===============================
+           DEVELOPMENT AREAS
+        =============================== */
+
+        .areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .area {
+            border: 1px solid #d7d7d7;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        /* ===============================
+           CTA
+        =============================== */
+
+        .cta {
+            padding: 100px 0;
+            background: #181818;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            letter-spacing: -0.045em;
+            max-width: 830px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #bbb;
+            max-width: 670px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 5px;
+            font-size: 0.93rem;
+            font-weight: 600;
+            background: white;
+            color: #181818;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #e9e9e9;
+        }
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            background: #181818;
+            color: #aaa;
+            padding: 35px 0;
+            border-top: 1px solid #303030;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .overview-grid,
+            .athlete-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .sport-grid,
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .highlight-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .page-hero {
+                padding: 90px 0 70px;
+            }
+
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV & Resume</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="coaching.html" class="active">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ===============================
+             HERO
+        =============================== -->
+
+        <section class="page-hero">
+            <div class="container">
+
+                <p class="eyebrow">Coaching & Athletics</p>
+
+                <h1>
+                    Developing athletes, programs, and positive sport environments.
+                </h1>
+
+                <p>
+                    My background in sport spans coaching, athletic administration,
+                    teaching, player development, competition, and community
+                    programming across youth, scholastic, collegiate, and adult
+                    settings.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             OVERVIEW
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <div class="overview-grid">
+
+                    <div class="overview-label">
+                        Coaching Background
+                    </div>
+
+                    <div class="overview-content">
+
+                        <p>
+                            Coaching has been a central part of my professional
+                            development and has influenced the way I approach
+                            leadership, education, communication, and program
+                            development.
+                        </p>
+
+                        <p>
+                            My experience includes more than a decade of coaching
+                            across tennis, basketball, and cross country, with
+                            roles at the collegiate, high school, junior high,
+                            youth, community recreation, and club levels.
+                        </p>
+
+                        <p>
+                            I have worked with athletes at different stages of
+                            development, from beginners learning fundamental
+                            movement and sport skills to competitive athletes
+                            preparing for interscholastic, collegiate, USTA,
+                            and tournament environments.
+                        </p>
+
+                        <p>
+                            Across these settings, my focus has remained consistent:
+                            create organized, challenging, supportive environments
+                            where athletes can improve, compete, and develop
+                            confidence and independence.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             SPORTS COACHED
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Sports & Development</h2>
+
+                <p class="section-intro">
+                    My coaching experience spans multiple sports and levels of
+                    competition, with an emphasis on teaching, long-term
+                    development, and program building.
+                </p>
+
+                <div class="sport-grid">
+
+                    <div class="sport-card">
+
+                        <div class="sport-label">01</div>
+
+                        <h3>Tennis</h3>
+
+                        <p>
+                            More than a decade of experience across high school,
+                            collegiate, USTA, youth, community recreation, private
+                            instruction, and competitive player development.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sport-card">
+
+                        <div class="sport-label">02</div>
+
+                        <h3>Basketball</h3>
+
+                        <p>
+                            Extensive scholastic and youth coaching experience,
+                            including varsity leadership, player development,
+                            team culture, practice design, and competition
+                            management.
+                        </p>
+
+                    </div>
+
+
+                    <div class="sport-card">
+
+                        <div class="sport-label">03</div>
+
+                        <h3>Cross Country</h3>
+
+                        <p>
+                            Experience coaching endurance athletes and supporting
+                            training, motivation, team development, and preparation
+                            for interscholastic competition.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             COACHING EXPERIENCE
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Selected Coaching Experience</h2>
+
+                <p class="section-intro">
+                    A condensed view of key coaching and sport-development roles.
+                </p>
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            2025 – Present
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>Tennis Instructor & USTA Junior Team Tennis Coach</h3>
+
+                            <h4>
+                                Community Recreation & Player Development
+                            </h4>
+
+                            <p>
+                                Lead youth and adult instructional programming,
+                                develop competitive players, coordinate Junior
+                                Team Tennis participation, and create structured
+                                training environments for athletes across multiple
+                                skill levels.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>Men's Tennis Coach</h3>
+
+                            <h4>
+                                Diablo Valley College
+                            </h4>
+
+                            <p>
+                                Supported collegiate player development,
+                                competition preparation, practice organization,
+                                recruitment, and team operations within a
+                                community college athletic environment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>High School Tennis Coach</h3>
+
+                            <h4>
+                                Scholastic Athletics
+                            </h4>
+
+                            <p>
+                                Developed competitive tennis programs and athletes
+                                through technical instruction, tactical development,
+                                match preparation, team culture, and long-term
+                                player progression.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>Basketball Coach</h3>
+
+                            <h4>
+                                High School, Junior High & Youth Athletics
+                            </h4>
+
+                            <p>
+                                Coached athletes across multiple developmental
+                                levels, including varsity basketball, with
+                                responsibilities spanning practice planning,
+                                skill development, team leadership, competition,
+                                and athlete mentorship.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>Cross Country Coach</h3>
+
+                            <h4>
+                                Scholastic Athletics
+                            </h4>
+
+                            <p>
+                                Supported student-athletes through structured
+                                conditioning, competition preparation, goal setting,
+                                motivation, and team development.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             ATHLETIC ADMINISTRATION
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Athletic Leadership</h2>
+
+                <p class="section-intro">
+                    My coaching experience eventually expanded into broader
+                    leadership and administration across entire athletic programs.
+                </p>
+
+                <div class="overview-grid">
+
+                    <div class="overview-label">
+                        Athletic Administration
+                    </div>
+
+                    <div class="overview-content">
+
+                        <p>
+                            As an athletic director, I managed the operational
+                            demands of a comprehensive interscholastic athletics
+                            program, coordinating more than 220 junior varsity
+                            and varsity events annually.
+                        </p>
+
+                        <p>
+                            Responsibilities included scheduling, facilities,
+                            transportation, officials, event management,
+                            communication, coach support, eligibility processes,
+                            budgeting, equipment, compliance, and student-athlete
+                            services.
+                        </p>
+
+                        <p>
+                            That experience strengthened my understanding of sport
+                            beyond individual teams and reinforced the importance
+                            of systems, communication, organizational culture,
+                            and long-term program development.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CAREER HIGHLIGHTS
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Selected Highlights</h2>
+
+                <p class="section-intro">
+                    A few indicators of the scope and impact of my work in sport.
+                </p>
+
+                <div class="highlight-grid">
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            10+
+                        </div>
+
+                        <div class="highlight-label">
+                            Years of coaching and athlete development experience
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            220+
+                        </div>
+
+                        <div class="highlight-label">
+                            Athletic events coordinated annually as athletic director
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            College
+                        </div>
+
+                        <div class="highlight-label">
+                            Coaching experience within collegiate athletics
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            USTA
+                        </div>
+
+                        <div class="highlight-label">
+                            Junior Team Tennis coaching and competitive player development
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             PHILOSOPHY
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Coaching Philosophy</h2>
+
+                <p class="section-intro">
+                    My approach to coaching combines teaching, athlete ownership,
+                    purposeful competition, and long-term development.
+                </p>
+
+                <div class="philosophy-grid">
+
+                    <div class="philosophy-card">
+
+                        <h3>Teach the Athlete</h3>
+
+                        <p>
+                            Coaching should develop understanding, not dependency.
+                            Athletes should learn how to make decisions, solve
+                            problems, and take increasing ownership of their
+                            performance.
+                        </p>
+
+                    </div>
+
+
+                    <div class="philosophy-card">
+
+                        <h3>Train With Purpose</h3>
+
+                        <p>
+                            Practices should connect directly to competition.
+                            Activities should have clear objectives and create
+                            opportunities for athletes to apply skills under
+                            realistic conditions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="philosophy-card">
+
+                        <h3>Build the Environment</h3>
+
+                        <p>
+                            Athlete development depends on culture. Expectations,
+                            communication, challenge, encouragement, and
+                            accountability all shape the quality of the sport
+                            experience.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             ATHLETIC BACKGROUND
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <div class="athlete-grid">
+
+                    <div class="athlete-label">
+                        Athletic Background
+                    </div>
+
+                    <div class="athlete-content">
+
+                        <p>
+                            My perspective as a coach is also informed by my own
+                            experience as an athlete. I competed in multiple sports
+                            growing up and continued into collegiate tennis at
+                            Diablo Valley College.
+                        </p>
+
+                        <p>
+                            Experiencing sport from both sides of the athlete-coach
+                            relationship has shaped the way I think about
+                            development, confidence, opportunity, competition,
+                            and the long-term impact that coaches can have.
+                        </p>
+
+                        <p>
+                            I continue to participate in tennis and use my own
+                            experiences as a player to better understand the
+                            technical, tactical, physical, and psychological
+                            demands athletes encounter.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             DEVELOPMENT AREAS
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Areas of Coaching Practice</h2>
+
+                <p class="section-intro">
+                    Areas represented throughout my coaching, instruction,
+                    athletic leadership, and player-development work.
+                </p>
+
+                <div class="areas">
+
+                    <span class="area">Player Development</span>
+                    <span class="area">Youth Sport</span>
+                    <span class="area">Tennis Instruction</span>
+                    <span class="area">Basketball Coaching</span>
+                    <span class="area">Athletic Administration</span>
+                    <span class="area">Practice Design</span>
+                    <span class="area">Team Culture</span>
+                    <span class="area">Competition Management</span>
+                    <span class="area">Long-Term Athlete Development</span>
+                    <span class="area">Sport Pedagogy</span>
+                    <span class="area">Community Recreation</span>
+                    <span class="area">Coach Development</span>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CTA
+        =============================== -->
+
+        <section class="cta">
+            <div class="container">
+
+                <h2>
+                    Sport has been both a profession and a platform for leadership.
+                </h2>
+
+                <p>
+                    My coaching background continues to shape how I approach
+                    education, program development, organizational leadership,
+                    and the creation of meaningful physical activity experiences.
+                </p>
+
+                <a href="cv.html" class="btn">
+                    View CV & Resume
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Jeffrey Jaymot
+            </div>
+
+            <div>
+                Kinesiology • Education • Leadership • Research
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

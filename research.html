@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Research | Jeffrey Jaymot</title>
+
+    <meta name="description"
+        content="Research by Jeffrey Jaymot focused on kinesiology, physical activity access, environmental justice, the built environment, and community physical activity.">
+
+    <style>
+        /* ===============================
+           RESET
+        =============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===============================
+           GLOBAL
+        =============================== */
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f7f7;
+        }
+
+        .section-dark {
+            background: #181818;
+            color: white;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            max-width: 780px;
+            color: #60646c;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
+        }
+
+        /* ===============================
+           NAVIGATION
+        =============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* ===============================
+           HERO
+        =============================== */
+
+        .page-hero {
+            padding: 120px 0 100px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #737373;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 28px;
+            max-width: 950px;
+        }
+
+        .page-hero p {
+            max-width: 820px;
+            font-size: 1.2rem;
+            color: #5f6368;
+        }
+
+        /* ===============================
+           RESEARCH OVERVIEW
+        =============================== */
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .overview-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+        }
+
+        .overview-content p {
+            font-size: 1.05rem;
+            color: #51555a;
+            margin-bottom: 22px;
+        }
+
+        /* ===============================
+           DISSERTATION
+        =============================== */
+
+        .research-feature {
+            max-width: 940px;
+        }
+
+        .research-kicker {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            font-weight: 700;
+            color: #8a8a8a;
+            margin-bottom: 16px;
+        }
+
+        .research-feature h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            letter-spacing: -0.035em;
+            margin-bottom: 25px;
+        }
+
+        .research-feature p {
+            color: #5e6267;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            max-width: 840px;
+        }
+
+        /* ===============================
+           RESEARCH QUESTIONS / THEMES
+        =============================== */
+
+        .theme-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .theme-card {
+            border-top: 3px solid #222;
+            padding-top: 20px;
+        }
+
+        .theme-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+        }
+
+        .theme-card p {
+            color: #666;
+            font-size: 0.94rem;
+        }
+
+        /* ===============================
+           METHODS
+        =============================== */
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .method-card {
+            border: 1px solid #e2e2e2;
+            border-radius: 8px;
+            padding: 30px;
+            background: #fff;
+        }
+
+        .method-number {
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #999;
+            margin-bottom: 35px;
+        }
+
+        .method-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .method-card p {
+            color: #666;
+            font-size: 0.93rem;
+        }
+
+        /* ===============================
+           FRAMEWORKS
+        =============================== */
+
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .framework-card {
+            padding: 32px;
+            border: 1px solid #e4e4e4;
+            border-radius: 8px;
+        }
+
+        .framework-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .framework-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ===============================
+           IMPACT
+        =============================== */
+
+        .impact-content {
+            max-width: 850px;
+        }
+
+        .impact-content p {
+            font-size: 1.08rem;
+            color: #575b60;
+            margin-bottom: 20px;
+        }
+
+        .impact-list {
+            margin-top: 25px;
+            padding-left: 20px;
+            color: #575b60;
+        }
+
+        .impact-list li {
+            margin-bottom: 12px;
+        }
+
+        /* ===============================
+           RESEARCH INTERESTS
+        =============================== */
+
+        .interest-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .interest-tag {
+            border: 1px solid #d7d7d7;
+            border-radius: 30px;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            background: #fff;
+        }
+
+        /* ===============================
+           CTA
+        =============================== */
+
+        .cta {
+            padding: 100px 0;
+            background: #181818;
+            color: white;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            max-width: 800px;
+            letter-spacing: -0.045em;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 650px;
+            color: #bbb;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 5px;
+            font-size: 0.93rem;
+            font-weight: 600;
+            background: white;
+            color: #181818;
+            transition: all 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #e9e9e9;
+        }
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            background: #181818;
+            color: #aaa;
+            padding: 35px 0;
+            border-top: 1px solid #303030;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .theme-grid,
+            .methods-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .framework-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .page-hero {
+                padding: 90px 0 70px;
+            }
+
+            .theme-grid,
+            .methods-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV & Resume</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
+                    <li><a href="coaching.html">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ===============================
+             HERO
+        =============================== -->
+
+        <section class="page-hero">
+            <div class="container">
+
+                <p class="eyebrow">Research</p>
+
+                <h1>
+                    Understanding the environments that shape physical activity.
+                </h1>
+
+                <p>
+                    My research examines how social, environmental, historical,
+                    and structural conditions influence opportunities to engage
+                    in physical activity and how communities experience the
+                    spaces designed to support movement, recreation, and health.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             RESEARCH OVERVIEW
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <div class="overview-grid">
+
+                    <div class="overview-label">
+                        Research Focus
+                    </div>
+
+                    <div class="overview-content">
+
+                        <p>
+                            My work is situated at the intersection of kinesiology,
+                            physical activity, community environments, social
+                            determinants of health, and environmental justice.
+                        </p>
+
+                        <p>
+                            I am particularly interested in understanding why
+                            physical activity opportunities may exist spatially
+                            but remain functionally inaccessible, undesirable,
+                            unsafe, underutilized, or disconnected from the
+                            communities they are intended to serve.
+                        </p>
+
+                        <p>
+                            This perspective moves beyond simply asking whether
+                            parks, recreation centers, trails, courts, or other
+                            resources are present. Instead, my research examines
+                            how history, perception, infrastructure, social
+                            conditions, quality, safety, transportation, and
+                            lived experience influence whether those spaces
+                            become meaningful opportunities for participation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             DISSERTATION
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <div class="research-feature">
+
+                    <div class="research-kicker">
+                        Doctoral Research
+                    </div>
+
+                    <h2>
+                        Redlining & the Creation of Functional Physical Activity Deserts
+                    </h2>
+
+                    <p>
+                        My doctoral research explores how historical patterns of
+                        neighborhood disinvestment and exclusion may continue to
+                        influence physical activity environments and experiences
+                        within communities today.
+                    </p>
+
+                    <p>
+                        The study focuses not only on spatial access to physical
+                        activity resources, but also on what influences whether
+                        residents actually view those spaces as usable,
+                        accessible, welcoming, safe, and relevant to their lives.
+                    </p>
+
+                    <p>
+                        By combining community perspectives with environmental
+                        and spatial analysis, the research seeks to develop a
+                        more complete understanding of what I describe as
+                        <strong>functional physical activity access</strong>:
+                        the difference between having a resource nearby and
+                        having a realistic opportunity to use it.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CORE THEMES
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Core Research Themes</h2>
+
+                <p class="section-intro">
+                    Several interconnected themes guide the questions I ask and
+                    the way I approach physical activity environments.
+                </p>
+
+                <div class="theme-grid">
+
+                    <div class="theme-card">
+
+                        <h3>Spatial Access</h3>
+
+                        <p>
+                            Where physical activity resources are located and
+                            how geography, distance, transportation, and the
+                            built environment influence access.
+                        </p>
+
+                    </div>
+
+
+                    <div class="theme-card">
+
+                        <h3>Functional Access</h3>
+
+                        <p>
+                            Whether available spaces can realistically be used
+                            based on quality, safety, maintenance, social context,
+                            cost, programming, and community experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="theme-card">
+
+                        <h3>Historical Context</h3>
+
+                        <p>
+                            How historic housing, planning, investment, and
+                            neighborhood policies may continue to shape modern
+                            physical activity environments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="theme-card">
+
+                        <h3>Lived Experience</h3>
+
+                        <p>
+                            How residents perceive, navigate, value, avoid,
+                            and engage with physical activity spaces within
+                            their communities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             METHODS
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Research Methods</h2>
+
+                <p class="section-intro">
+                    My research uses multiple forms of evidence to connect
+                    community experience with environmental and spatial context.
+                </p>
+
+                <div class="methods-grid">
+
+                    <div class="method-card">
+
+                        <div class="method-number">01</div>
+
+                        <h3>Survey Research</h3>
+
+                        <p>
+                            Collecting quantitative and descriptive information
+                            about physical activity behavior, barriers,
+                            perceptions, environments, and community experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="method-card">
+
+                        <div class="method-number">02</div>
+
+                        <h3>Interviews</h3>
+
+                        <p>
+                            Using semi-structured interviews to explore lived
+                            experience and understand the factors that may not
+                            be visible through spatial or quantitative data alone.
+                        </p>
+
+                    </div>
+
+
+                    <div class="method-card">
+
+                        <div class="method-number">03</div>
+
+                        <h3>GIS & Spatial Analysis</h3>
+
+                        <p>
+                            Mapping physical activity resources and examining
+                            their relationship to historic and contemporary
+                            neighborhood conditions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="method-card">
+
+                        <div class="method-number">04</div>
+
+                        <h3>Direct Observation</h3>
+
+                        <p>
+                            Examining the physical characteristics, condition,
+                            usability, accessibility, and surrounding environment
+                            of physical activity spaces.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             FRAMEWORKS
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Conceptual Frameworks</h2>
+
+                <p class="section-intro">
+                    My research draws from frameworks that recognize physical
+                    activity as the product of interacting individual,
+                    environmental, social, and structural influences.
+                </p>
+
+                <div class="framework-grid">
+
+                    <div class="framework-card">
+
+                        <h3>Socioecological Perspective</h3>
+
+                        <p>
+                            Physical activity is influenced by factors operating
+                            across multiple levels, including individual
+                            experience, social relationships, organizations,
+                            neighborhoods, policies, and the broader environment.
+                        </p>
+
+                    </div>
+
+
+                    <div class="framework-card">
+
+                        <h3>Social Determinants of Health</h3>
+
+                        <p>
+                            Health and physical activity opportunities are shaped
+                            by the conditions in which people live, learn, work,
+                            move, and participate in their communities.
+                        </p>
+
+                    </div>
+
+
+                    <div class="framework-card">
+
+                        <h3>Environmental Justice</h3>
+
+                        <p>
+                            The distribution, quality, accessibility, and
+                            experience of community resources can reflect broader
+                            histories of investment, exclusion, and inequity.
+                        </p>
+
+                    </div>
+
+
+                    <div class="framework-card">
+
+                        <h3>Ecological Systems Thinking</h3>
+
+                        <p>
+                            Individual experiences occur within interconnected
+                            systems, making it important to examine how local
+                            environments interact with institutions, policies,
+                            histories, and social conditions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             WHY IT MATTERS
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Why This Research Matters</h2>
+
+                <div class="impact-content">
+
+                    <p>
+                        Communities can appear well served when access is measured
+                        only by the presence of parks, recreation facilities,
+                        trails, courts, or other physical activity resources.
+                        That measure can overlook whether those resources are
+                        actually usable or meaningful to residents.
+                    </p>
+
+                    <p>
+                        A more complete understanding of access can help
+                        practitioners, researchers, planners, recreation agencies,
+                        and policymakers identify barriers that traditional
+                        spatial measures may miss.
+                    </p>
+
+                    <ul class="impact-list">
+                        <li>
+                            Improve how physical activity access is evaluated.
+                        </li>
+
+                        <li>
+                            Better incorporate community experience into planning
+                            and program development.
+                        </li>
+
+                        <li>
+                            Identify barriers related to safety, quality,
+                            infrastructure, transportation, and perception.
+                        </li>
+
+                        <li>
+                            Support more equitable investment in recreation and
+                            physical activity environments.
+                        </li>
+
+                        <li>
+                            Connect research findings to practical decisions
+                            within communities and public agencies.
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             RESEARCH INTERESTS
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Research Interests</h2>
+
+                <p class="section-intro">
+                    Areas that currently shape my scholarly and applied interests.
+                </p>
+
+                <div class="interest-tags">
+
+                    <span class="interest-tag">Physical Activity Access</span>
+                    <span class="interest-tag">Built Environment</span>
+                    <span class="interest-tag">Environmental Justice</span>
+                    <span class="interest-tag">Health Equity</span>
+                    <span class="interest-tag">Community Recreation</span>
+                    <span class="interest-tag">Redlining</span>
+                    <span class="interest-tag">GIS</span>
+                    <span class="interest-tag">Social Determinants of Health</span>
+                    <span class="interest-tag">Sport & Recreation Policy</span>
+                    <span class="interest-tag">Program Evaluation</span>
+                    <span class="interest-tag">Community Engagement</span>
+                    <span class="interest-tag">Mixed Methods Research</span>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CTA
+        =============================== -->
+
+        <section class="cta">
+            <div class="container">
+
+                <h2>
+                    Research should inform better environments and better decisions.
+                </h2>
+
+                <p>
+                    My goal is to connect scholarship with practical applications
+                    in physical activity, recreation, community programming,
+                    planning, and organizational decision-making.
+                </p>
+
+                <a href="cv.html" class="btn">
+                    View CV & Resume
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Jeffrey Jaymot
+            </div>
+
+            <div>
+                Kinesiology • Education • Leadership • Research
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

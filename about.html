@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Jeffrey Jaymot</title>
+
+    <meta name="description"
+        content="Learn more about Jeffrey Jaymot's background in kinesiology, education, athletics, research, coaching, and program leadership.">
+
+    <style>
+        /* ===============================
+           RESET
+        =============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ===============================
+           GLOBAL
+        =============================== */
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f7f7;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #60646c;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
+        }
+
+        /* ===============================
+           NAVIGATION
+        =============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* ===============================
+           PAGE HERO
+        =============================== */
+
+        .page-hero {
+            padding: 120px 0 100px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #737373;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 28px;
+        }
+
+        .page-hero p {
+            max-width: 780px;
+            font-size: 1.2rem;
+            color: #5f6368;
+        }
+
+        /* ===============================
+           BIOGRAPHY
+        =============================== */
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .bio-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+        }
+
+        .bio-content {
+            max-width: 780px;
+        }
+
+        .bio-content p {
+            margin-bottom: 24px;
+            color: #4f5358;
+            font-size: 1.05rem;
+        }
+
+        .bio-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===============================
+           CAREER THREAD
+        =============================== */
+
+        .thread-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .thread-card {
+            padding-top: 22px;
+            border-top: 3px solid #222;
+        }
+
+        .thread-card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+        }
+
+        .thread-card p {
+            color: #686868;
+            font-size: 0.94rem;
+        }
+
+        /* ===============================
+           PROFESSIONAL APPROACH
+        =============================== */
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .approach-card {
+            padding: 32px;
+            border: 1px solid #e3e3e3;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .approach-number {
+            font-size: 0.78rem;
+            color: #999;
+            font-weight: 700;
+            margin-bottom: 35px;
+        }
+
+        .approach-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .approach-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* ===============================
+           CURRENT DIRECTION
+        =============================== */
+
+        .direction-content {
+            max-width: 850px;
+        }
+
+        .direction-content p {
+            color: #575b60;
+            font-size: 1.08rem;
+            margin-bottom: 20px;
+        }
+
+        /* ===============================
+           CTA
+        =============================== */
+
+        .cta {
+            padding: 100px 0;
+            background: #181818;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            letter-spacing: -0.045em;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #bbb;
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 5px;
+            font-size: 0.93rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-light {
+            background: white;
+            color: #181818;
+        }
+
+        .btn-outline {
+            color: white;
+            border: 1px solid #555;
+        }
+
+        .btn-outline:hover {
+            border-color: #aaa;
+        }
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            background: #181818;
+            color: #aaa;
+            padding: 35px 0;
+            border-top: 1px solid #303030;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .thread-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .page-hero {
+                padding: 90px 0 70px;
+            }
+
+            .thread-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="cv.html">CV & Resume</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="coaching.html">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ===============================
+             PAGE HERO
+        =============================== -->
+
+        <section class="page-hero">
+            <div class="container">
+
+                <p class="eyebrow">About</p>
+
+                <h1>A multidisciplinary career built around people, programs, and physical activity.</h1>
+
+                <p>
+                    My professional path has crossed kinesiology, education,
+                    athletics, research, technology, business, and community
+                    programming. The common thread has always been developing
+                    people and building environments where they can succeed.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             BIOGRAPHY
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <div class="bio-grid">
+
+                    <div class="bio-label">
+                        Professional Background
+                    </div>
+
+                    <div class="bio-content">
+
+                        <p>
+                            I am a kinesiology professional, educator, researcher,
+                            coach, and program leader with experience spanning
+                            secondary education, interscholastic athletics,
+                            collegiate athletics, community recreation, youth
+                            development, and sport programming.
+                        </p>
+
+                        <p>
+                            My career began through teaching and coaching, where
+                            I developed a strong interest in the relationship
+                            between physical activity, education, leadership,
+                            and personal development. Over time, that work
+                            expanded into athletic administration, program
+                            management, curriculum development, research,
+                            technology, and organizational leadership.
+                        </p>
+
+                        <p>
+                            I have worked in roles that required both direct
+                            service and systems-level thinking: teaching students,
+                            coaching athletes, managing athletic programs,
+                            coordinating events, developing community programs,
+                            supervising operations, and conducting research.
+                        </p>
+
+                        <p>
+                            Rather than viewing these areas as separate careers,
+                            I see them as interconnected. Sport, education,
+                            recreation, research, and technology all provide
+                            opportunities to improve how people learn, move,
+                            participate, and engage with their communities.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CAREER THREAD
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">The Career Thread</h2>
+
+                <p class="section-intro">
+                    Although my experience spans several fields, four themes
+                    consistently connect my work.
+                </p>
+
+                <div class="thread-grid">
+
+                    <div class="thread-card">
+                        <h3>Leadership</h3>
+                        <p>
+                            Building programs, coordinating people and resources,
+                            solving operational challenges, and creating systems
+                            that support long-term success.
+                        </p>
+                    </div>
+
+                    <div class="thread-card">
+                        <h3>Education</h3>
+                        <p>
+                            Helping people learn through teaching, coaching,
+                            curriculum development, mentorship, and applied
+                            instructional practice.
+                        </p>
+                    </div>
+
+                    <div class="thread-card">
+                        <h3>Physical Activity</h3>
+                        <p>
+                            Using sport, exercise, recreation, and movement as
+                            tools for development, health, participation, and
+                            community engagement.
+                        </p>
+                    </div>
+
+                    <div class="thread-card">
+                        <h3>Research & Analysis</h3>
+                        <p>
+                            Applying research, technology, and data to better
+                            understand programs, environments, participation,
+                            and decision-making.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             PROFESSIONAL APPROACH
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Professional Approach</h2>
+
+                <p class="section-intro">
+                    I approach leadership and program development through a
+                    combination of practical experience, evidence, adaptability,
+                    and relationship building.
+                </p>
+
+                <div class="approach-grid">
+
+                    <div class="approach-card">
+
+                        <div class="approach-number">01</div>
+
+                        <h3>People First</h3>
+
+                        <p>
+                            Strong programs begin with understanding the people
+                            they serve. I value communication, mentorship,
+                            accessibility, and meaningful relationships.
+                        </p>
+
+                    </div>
+
+
+                    <div class="approach-card">
+
+                        <div class="approach-number">02</div>
+
+                        <h3>Systems Thinking</h3>
+
+                        <p>
+                            Sustainable improvement requires looking beyond
+                            individual tasks and understanding how people,
+                            policies, environments, resources, and operations
+                            interact.
+                        </p>
+
+                    </div>
+
+
+                    <div class="approach-card">
+
+                        <div class="approach-number">03</div>
+
+                        <h3>Continuous Improvement</h3>
+
+                        <p>
+                            I believe strong programs evolve through reflection,
+                            data, feedback, experimentation, and a willingness
+                            to adjust when better approaches become available.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CURRENT DIRECTION
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Current Direction</h2>
+
+                <div class="direction-content">
+
+                    <p>
+                        My current work continues to bring together kinesiology,
+                        research, sport, recreation, education, and program
+                        leadership. I am particularly interested in how
+                        organizations and communities can create stronger,
+                        more accessible opportunities for people to participate
+                        in physical activity.
+                    </p>
+
+                    <p>
+                        Through doctoral research, community programming,
+                        coaching, and continued professional development, I am
+                        expanding my ability to work across both direct-service
+                        and organizational leadership environments.
+                    </p>
+
+                    <p>
+                        Long term, my goal is to contribute to organizations
+                        where program development, leadership, physical activity,
+                        education, and community impact intersect.
+                    </p>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CTA
+        =============================== -->
+
+        <section class="cta">
+            <div class="container">
+
+                <h2>
+                    Explore the experience behind the work.
+                </h2>
+
+                <p>
+                    View my CV and resume for a complete professional history,
+                    or explore my research and coaching background in greater
+                    detail.
+                </p>
+
+                <div class="cta-buttons">
+
+                    <a href="cv.html" class="btn btn-light">
+                        CV & Resume
+                    </a>
+
+                    <a href="research.html" class="btn btn-outline">
+                        Research
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Jeffrey Jaymot
+            </div>
+
+            <div>
+                Kinesiology • Education • Leadership • Research
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jeffrey Jaymot | Professional Portfolio</title>
+
+    <meta name="description"
+        content="Professional portfolio of Jeffrey Jaymot, featuring leadership, kinesiology, education, research, athletics, and community programming.">
+
+    <style>
+        /* ===============================
+           RESET
+        =============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* ===============================
+           GLOBAL
+        =============================== */
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f7f7;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            max-width: 720px;
+            color: #60646c;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
+        }
+
+        /* ===============================
+           NAVIGATION
+        =============================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* ===============================
+           HERO
+        =============================== */
+
+        .hero {
+            min-height: 78vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #737373;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -0.055em;
+            margin-bottom: 25px;
+        }
+
+        .hero-title {
+            font-size: clamp(1.25rem, 3vw, 1.7rem);
+            font-weight: 500;
+            margin-bottom: 25px;
+            color: #383838;
+        }
+
+        .hero-description {
+            max-width: 740px;
+            font-size: 1.15rem;
+            color: #60646c;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 22px;
+            border-radius: 5px;
+            font-size: 0.93rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #181818;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #777;
+        }
+
+        /* ===============================
+           PROFESSIONAL SNAPSHOT
+        =============================== */
+
+        .snapshot-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .snapshot-card {
+            border-top: 3px solid #222;
+            padding-top: 20px;
+        }
+
+        .snapshot-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .snapshot-card p {
+            font-size: 0.94rem;
+            color: #686868;
+        }
+
+        /* ===============================
+           CURRENT FOCUS
+        =============================== */
+
+        .focus-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .focus-card {
+            padding: 35px;
+            border: 1px solid #e4e4e4;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .focus-number {
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: #999;
+            margin-bottom: 45px;
+        }
+
+        .focus-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+
+        .focus-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* ===============================
+           CAREER HIGHLIGHTS
+        =============================== */
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .highlight {
+            padding-right: 20px;
+        }
+
+        .highlight-value {
+            font-size: 2.3rem;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 6px;
+        }
+
+        .highlight-label {
+            color: #666;
+            font-size: 0.92rem;
+        }
+
+        /* ===============================
+           EDUCATION
+        =============================== */
+
+        .education-list {
+            max-width: 850px;
+        }
+
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 24px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .degree {
+            font-weight: 700;
+        }
+
+        .education-detail {
+            color: #5e5e5e;
+        }
+
+        /* ===============================
+           AREAS OF PRACTICE
+        =============================== */
+
+        .areas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .area {
+            border: 1px solid #d7d7d7;
+            padding: 10px 16px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            background: white;
+        }
+
+        /* ===============================
+           CTA
+        =============================== */
+
+        .cta {
+            padding: 100px 0;
+            background: #181818;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            letter-spacing: -0.045em;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #bbb;
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #181818;
+        }
+
+        /* ===============================
+           FOOTER
+        =============================== */
+
+        footer {
+            background: #181818;
+            color: #aaa;
+            padding: 35px 0;
+            border-top: 1px solid #303030;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* ===============================
+           RESPONSIVE
+        =============================== */
+
+        @media (max-width: 900px) {
+
+            .snapshot-grid,
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .focus-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 90px 0 70px;
+            }
+
+            .snapshot-grid,
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .education-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV & Resume</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="coaching.html">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- ===============================
+             HERO
+        =============================== -->
+
+        <section class="hero">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        Leadership • Kinesiology • Education • Research
+                    </p>
+
+                    <h1>Jeffrey Jaymot</h1>
+
+                    <p class="hero-title">
+                        Program Leader, Educator & Kinesiology Researcher
+                    </p>
+
+                    <p class="hero-description">
+                        Multidisciplinary professional with experience across
+                        sport and recreation leadership, education, athletics,
+                        research, program development, and community physical
+                        activity. My work focuses on creating effective programs,
+                        developing people, and improving access to meaningful
+                        physical activity opportunities.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="cv.html" class="btn btn-primary">
+                            View CV & Resume
+                        </a>
+
+                        <a href="research.html" class="btn btn-secondary">
+                            Research
+                        </a>
+
+                        <a href="contact.html" class="btn btn-secondary">
+                            Contact
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             PROFESSIONAL SNAPSHOT
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Professional Snapshot</h2>
+
+                <p class="section-intro">
+                    A career spanning program leadership, education, research,
+                    athletics, coaching, and community-based physical activity.
+                </p>
+
+                <div class="snapshot-grid">
+
+                    <div class="snapshot-card">
+                        <h3>Program Leadership</h3>
+                        <p>
+                            Experience leading athletic, educational, recreational,
+                            and community programs.
+                        </p>
+                    </div>
+
+                    <div class="snapshot-card">
+                        <h3>Research</h3>
+                        <p>
+                            Doctoral research examining physical activity,
+                            environmental access, and community experience.
+                        </p>
+                    </div>
+
+                    <div class="snapshot-card">
+                        <h3>Education</h3>
+                        <p>
+                            Extensive experience in teaching, curriculum,
+                            instructional technology, and student development.
+                        </p>
+                    </div>
+
+                    <div class="snapshot-card">
+                        <h3>Sport & Athletics</h3>
+                        <p>
+                            Leadership and coaching experience across school,
+                            collegiate, community, and youth sport settings.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CURRENT FOCUS
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Current Focus</h2>
+
+                <p class="section-intro">
+                    My current work connects research, community programming,
+                    sport, education, and organizational leadership.
+                </p>
+
+                <div class="focus-grid">
+
+                    <article class="focus-card">
+                        <div class="focus-number">01</div>
+
+                        <h3>Doctoral Research</h3>
+
+                        <p>
+                            Exploring how historical, environmental, and social
+                            conditions influence access to and engagement with
+                            physical activity spaces.
+                        </p>
+                    </article>
+
+
+                    <article class="focus-card">
+                        <div class="focus-number">02</div>
+
+                        <h3>Sport & Recreation</h3>
+
+                        <p>
+                            Developing sustainable programming that connects
+                            athletics, recreation, physical activity, and
+                            community engagement.
+                        </p>
+                    </article>
+
+
+                    <article class="focus-card">
+                        <div class="focus-number">03</div>
+
+                        <h3>Coaching & Development</h3>
+
+                        <p>
+                            Supporting athlete development through structured
+                            instruction, long-term development, and positive
+                            sport experiences.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CAREER HIGHLIGHTS
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Career Highlights</h2>
+
+                <p class="section-intro">
+                    Selected indicators of leadership experience and professional
+                    scope.
+                </p>
+
+                <div class="highlights-grid">
+
+                    <div class="highlight">
+                        <div class="highlight-value">220+</div>
+                        <div class="highlight-label">
+                            Athletic events managed annually
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <div class="highlight-value">10+</div>
+                        <div class="highlight-label">
+                            Years in coaching and sport development
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <div class="highlight-value">4</div>
+                        <div class="highlight-label">
+                            Graduate degree programs completed or pursued
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <div class="highlight-value">Multi</div>
+                        <div class="highlight-label">
+                            Sector experience across education, athletics,
+                            recreation, and research
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             EDUCATION
+        =============================== -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Education</h2>
+
+                <p class="section-intro">
+                    Interdisciplinary graduate preparation spanning kinesiology,
+                    education, technology, and business.
+                </p>
+
+                <div class="education-list">
+
+                    <div class="education-item">
+                        <div class="degree">
+                            Doctor of Education
+                        </div>
+
+                        <div class="education-detail">
+                            Kinesiology — University of North Carolina Greensboro
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">
+                            Master of Business Administration
+                        </div>
+
+                        <div class="education-detail">
+                            Business Analytics — Fitchburg State University
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">
+                            Master of Science
+                        </div>
+
+                        <div class="education-detail">
+                            Educational Technology — California State University,
+                            East Bay
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="degree">
+                            Master of Arts
+                        </div>
+
+                        <div class="education-detail">
+                            Kinesiology — Saint Mary's College of California
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             PROFESSIONAL AREAS
+        =============================== -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Professional Areas</h2>
+
+                <p class="section-intro">
+                    Areas represented throughout my professional, academic,
+                    and leadership experience.
+                </p>
+
+                <div class="areas">
+
+                    <span class="area">Program Leadership</span>
+                    <span class="area">Kinesiology</span>
+                    <span class="area">Sport Management</span>
+                    <span class="area">Recreation</span>
+                    <span class="area">Athletic Administration</span>
+                    <span class="area">Research</span>
+                    <span class="area">Education</span>
+                    <span class="area">Coaching</span>
+                    <span class="area">Program Development</span>
+                    <span class="area">Instructional Technology</span>
+                    <span class="area">Business Analytics</span>
+                    <span class="area">Community Physical Activity</span>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===============================
+             CALL TO ACTION
+        =============================== -->
+
+        <section class="cta">
+            <div class="container">
+
+                <h2>
+                    Leadership through sport, education, research, and community.
+                </h2>
+
+                <p>
+                    Explore my professional background, research, coaching
+                    experience, education, and qualifications throughout this
+                    portfolio.
+                </p>
+
+                <a href="about.html" class="btn">
+                    Learn More About Me
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
+
+    <footer>
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Jeffrey Jaymot
+            </div>
+
+            <div>
+                Kinesiology • Education • Leadership • Research
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

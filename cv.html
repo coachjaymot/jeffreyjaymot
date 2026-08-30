@@ -1,1 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CV & Resume | Jeffrey Jaymot</title>
+
+    <meta name="description"
+        content="View Jeffrey Jaymot's curriculum vitae and professional resume, including experience in kinesiology, education, athletics, research, recreation, and program leadership.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #202124;
+            background: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-light {
+            background: #f7f7f7;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            letter-spacing: -0.03em;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #60646c;
+            margin-bottom: 45px;
+            font-size: 1.05rem;
+        }
+
+        /* NAVIGATION */
+
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.96);
+            border-bottom: 1px solid #e8e8e8;
+            z-index: 1000;
+        }
+
+        nav {
+            height: 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #444;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #000;
+            font-weight: 600;
+        }
+
+        /* HERO */
+
+        .page-hero {
+            padding: 120px 0 100px;
+        }
+
+        .eyebrow {
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #737373;
+            margin-bottom: 20px;
+        }
+
+        .page-hero h1 {
+            font-size: clamp(3rem, 7vw, 5rem);
+            line-height: 1;
+            letter-spacing: -0.05em;
+            margin-bottom: 28px;
+        }
+
+        .page-hero p {
+            max-width: 800px;
+            font-size: 1.2rem;
+            color: #5f6368;
+        }
+
+        /* DOCUMENT CARDS */
+
+        .document-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .document-card {
+            border: 1px solid #e2e2e2;
+            border-radius: 9px;
+            padding: 40px;
+            background: #fff;
+        }
+
+        .document-label {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: #888;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .document-card h2 {
+            font-size: 2rem;
+            margin-bottom: 14px;
+            letter-spacing: -0.03em;
+        }
+
+        .document-card p {
+            color: #666;
+            margin-bottom: 28px;
+            max-width: 450px;
+        }
+
+        .document-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background: #181818;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #333;
+        }
+
+        .btn-secondary {
+            border: 1px solid #ccc;
+            background: white;
+        }
+
+        .btn-secondary:hover {
+            border-color: #777;
+        }
+
+        /* PROFESSIONAL SUMMARY */
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 70px;
+        }
+
+        .summary-label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #777;
+        }
+
+        .summary-content p {
+            color: #51555a;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-list {
+            max-width: 920px;
+        }
+
+        .experience-item {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 40px;
+            padding: 30px 0;
+            border-bottom: 1px solid #dedede;
+        }
+
+        .experience-date {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .experience-info h3 {
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+
+        .experience-info h4 {
+            font-size: 0.95rem;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .experience-info p {
+            color: #666;
+            font-size: 0.94rem;
+        }
+
+        /* EDUCATION */
+
+        .education-list {
+            max-width: 900px;
+        }
+
+        .education-item {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            padding: 24px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .degree {
+            font-weight: 700;
+        }
+
+        .education-detail {
+            color: #5e5e5e;
+        }
+
+        /* CTA */
+
+        .cta {
+            padding: 100px 0;
+            background: #181818;
+            color: #fff;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.2rem, 5vw, 3.6rem);
+            letter-spacing: -0.045em;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: #bbb;
+            max-width: 650px;
+            margin-bottom: 30px;
+            font-size: 1.05rem;
+        }
+
+        .cta .btn {
+            background: white;
+            color: #181818;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #181818;
+            color: #aaa;
+            padding: 35px 0;
+            border-top: 1px solid #303030;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .document-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .experience-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .page-hero {
+                padding: 90px 0 70px;
+            }
+
+            .education-item {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+
+                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html" class="active">CV & Resume</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="coaching.html">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+
+        <section class="page-hero">
+            <div class="container">
+
+                <p class="eyebrow">CV & Resume</p>
+
+                <h1>Professional Experience & Qualifications</h1>
+
+                <p>
+                    My professional background spans kinesiology, education,
+                    athletic administration, coaching, recreation, research,
+                    technology, and program leadership.
+                </p>
+
+            </div>
+        </section>
+
+
+        <!-- CV / RESUME DOWNLOADS -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Professional Documents</h2>
+
+                <p class="section-intro">
+                    Choose the format that best fits your needs. My resume
+                    provides a concise overview, while my curriculum vitae
+                    presents a more comprehensive professional and academic record.
+                </p>
+
+                <div class="document-grid">
+
+                    <div class="document-card">
+
+                        <div class="document-label">
+                            Concise Professional Overview
+                        </div>
+
+                        <h2>Resume</h2>
+
+                        <p>
+                            A focused summary of professional experience,
+                            leadership, education, and selected accomplishments
+                            designed for employment and professional opportunities.
+                        </p>
+
+                        <div class="document-buttons">
+
+                            <a href="files/Jeffrey-Jaymot-Resume.pdf"
+                               target="_blank"
+                               class="btn btn-primary">
+                                View Resume
+                            </a>
+
+                            <a href="files/Jeffrey-Jaymot-Resume.pdf"
+                               download
+                               class="btn btn-secondary">
+                                Download PDF
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="document-card">
+
+                        <div class="document-label">
+                            Comprehensive Professional Record
+                        </div>
+
+                        <h2>Curriculum Vitae</h2>
+
+                        <p>
+                            A comprehensive record of education, employment,
+                            research, teaching, coaching, certifications,
+                            professional development, and related experience.
+                        </p>
+
+                        <div class="document-buttons">
+
+                            <a href="files/Jeffrey-Jaymot-CV.pdf"
+                               target="_blank"
+                               class="btn btn-primary">
+                                View CV
+                            </a>
+
+                            <a href="files/Jeffrey-Jaymot-CV.pdf"
+                               download
+                               class="btn btn-secondary">
+                                Download PDF
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROFESSIONAL SUMMARY -->
+
+        <section class="section">
+            <div class="container">
+
+                <div class="summary-grid">
+
+                    <div class="summary-label">
+                        Professional Summary
+                    </div>
+
+                    <div class="summary-content">
+
+                        <p>
+                            Multidisciplinary professional with experience in
+                            program leadership, education, athletics, coaching,
+                            kinesiology, recreation, research, instructional
+                            technology, and organizational operations.
+                        </p>
+
+                        <p>
+                            My career has included leadership in secondary school
+                            athletics, physical education, collegiate and youth
+                            coaching, community recreation, program development,
+                            and doctoral research.
+                        </p>
+
+                        <p>
+                            I bring a combination of direct-service experience
+                            and systems-level leadership, with particular strengths
+                            in program development, communication, operations,
+                            athlete and student development, and organizational
+                            improvement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- SELECTED EXPERIENCE -->
+
+        <section class="section section-light">
+            <div class="container">
+
+                <h2 class="section-title">Selected Experience</h2>
+
+                <p class="section-intro">
+                    A brief overview of key professional roles. The complete
+                    employment history is available in my CV and resume.
+                </p>
+
+                <div class="experience-list">
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2025 – Present
+                        </div>
+
+                        <div class="experience-info">
+
+                            <h3>Doctoral Researcher</h3>
+
+                            <h4>
+                                University of North Carolina Greensboro
+                            </h4>
+
+                            <p>
+                                Conducting applied kinesiology research focused
+                                on physical activity environments, access,
+                                participation, environmental justice, and
+                                community experience.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2025 – Present
+                        </div>
+
+                        <div class="experience-info">
+
+                            <h3>
+                                Tennis Instructor & Program Leader
+                            </h3>
+
+                            <h4>
+                                Community Recreation & Tennis Programming
+                            </h4>
+
+                            <p>
+                                Develop and deliver youth and adult tennis
+                                programming, coordinate player development,
+                                organize instructional opportunities, and
+                                support community-based sport participation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            2021 – 2024
+                        </div>
+
+                        <div class="experience-info">
+
+                            <h3>Athletic Director</h3>
+
+                            <h4>
+                                Richmond High School
+                            </h4>
+
+                            <p>
+                                Directed interscholastic athletic operations,
+                                coordinated more than 220 annual athletic events,
+                                supported coaches and student-athletes, managed
+                                scheduling and logistics, and contributed to
+                                organizational improvement across the athletic
+                                program.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="experience-info">
+
+                            <h3>Physical Education Teacher & Department Leader</h3>
+
+                            <h4>
+                                Richmond High School
+                            </h4>
+
+                            <p>
+                                Taught physical education and sports medicine,
+                                supported curriculum and instructional development,
+                                served in department leadership, and worked with
+                                students across diverse educational and athletic
+                                settings.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="experience-item">
+
+                        <div class="experience-date">
+                            Multi-Year
+                        </div>
+
+                        <div class="experience-info">
+
+                            <h3>Collegiate & Scholastic Coach</h3>
+
+                            <h4>
+                                Tennis, Basketball & Cross Country
+                            </h4>
+
+                            <p>
+                                Coaching experience across collegiate, high school,
+                                junior high, youth, and community settings,
+                                including athlete development, team leadership,
+                                competition management, and long-term program
+                                development.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- EDUCATION -->
+
+        <section class="section">
+            <div class="container">
+
+                <h2 class="section-title">Graduate Education</h2>
+
+                <p class="section-intro">
+                    Interdisciplinary preparation across kinesiology, education,
+                    technology, and business.
+                </p>
+
+                <div class="education-list">
+
+                    <div class="education-item">
+
+                        <div class="degree">
+                            Doctor of Education
+                        </div>
+
+                        <div class="education-detail">
+                            Kinesiology — University of North Carolina Greensboro
+                        </div>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="degree">
+                            Master of Business Administration
+                        </div>
+
+                        <div class="education-detail">
+                            Business Analytics — Fitchburg State University
+                        </div>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="degree">
+                            Master of Science
+                        </div>
+
+                        <div class="education-detail">
+                            Educational Technology — California State University,
+                            East Bay
+                        </div>
+
+                    </div>
+
+
+                    <div class="education-item">
+
+                        <div class="degree">
+                            Master of Arts
+                        </div>
+
+                        <div class="education-detail">
+                            Kinesiology — Saint Mary's College of California
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- CTA -->
+
+        <section class="cta">
+            <div class="container">
+
+                <h2>
+                    Looking for more detail?
+                </h2>
+
+                <p>
+                    Explore my research, coaching and athletic experience,
+                    professional skills, certifications, and broader background
+                    throughout the portfolio.
+                </p>
+
+                <a href="research.html" class="btn">
+                    Explore Research
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="container footer-content">
+
+            <div>
+                © 2026 Jeffrey Jaymot
+            </div>
+
+            <div>
+                Kinesiology • Education • Leadership • Research
+            </div>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

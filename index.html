@@ -11,6 +11,7 @@
         content="Professional portfolio of Jeffrey Jaymot, featuring leadership, kinesiology, education, research, athletics, and community programming.">
 
     <style>
+
         /* ===============================
            RESET
         =============================== */
@@ -122,11 +123,18 @@
             min-height: 78vh;
             display: flex;
             align-items: center;
-            padding: 100px 0;
+            padding: 95px 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.45fr 0.75fr;
+            gap: 70px;
+            align-items: center;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 800px;
         }
 
         .eyebrow {
@@ -139,7 +147,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-size: clamp(3rem, 7vw, 5.3rem);
             line-height: 1;
             letter-spacing: -0.055em;
             margin-bottom: 25px;
@@ -153,7 +161,7 @@
         }
 
         .hero-description {
-            max-width: 740px;
+            max-width: 720px;
             font-size: 1.15rem;
             color: #60646c;
             margin-bottom: 35px;
@@ -164,6 +172,25 @@
             gap: 15px;
             flex-wrap: wrap;
         }
+
+        .hero-photo-wrap {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 340px;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+            filter: grayscale(8%);
+        }
+
+        /* ===============================
+           BUTTONS
+        =============================== */
 
         .btn {
             display: inline-block;
@@ -218,6 +245,49 @@
         }
 
         /* ===============================
+           CURRENT ROLES
+        =============================== */
+
+        .current-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .current-card {
+            padding: 32px;
+            border: 1px solid #e3e3e3;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .current-status {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.11em;
+            font-weight: 700;
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .current-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .current-card h4 {
+            font-size: 0.9rem;
+            color: #777;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .current-card p {
+            color: #666;
+            font-size: 0.94rem;
+        }
+
+        /* ===============================
            CURRENT FOCUS
         =============================== */
 
@@ -266,7 +336,7 @@
         }
 
         .highlight-value {
-            font-size: 2.3rem;
+            font-size: 2.15rem;
             font-weight: 700;
             letter-spacing: -0.04em;
             margin-bottom: 6px;
@@ -301,8 +371,13 @@
             color: #5e5e5e;
         }
 
+        .education-detail small {
+            color: #888;
+            font-size: 0.82rem;
+        }
+
         /* ===============================
-           AREAS OF PRACTICE
+           PROFESSIONAL AREAS
         =============================== */
 
         .areas {
@@ -372,17 +447,31 @@
 
         @media (max-width: 900px) {
 
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .hero-photo-wrap {
+                justify-content: flex-start;
+            }
+
+            .hero-photo {
+                max-width: 300px;
+            }
+
             .snapshot-grid,
             .highlights-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .current-grid,
             .focus-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                display: none;
             }
         }
 
@@ -394,7 +483,7 @@
 
             .hero {
                 min-height: auto;
-                padding: 90px 0 70px;
+                padding: 80px 0 70px;
             }
 
             .snapshot-grid,
@@ -411,6 +500,7 @@
                 flex-direction: column;
             }
         }
+
     </style>
 </head>
 
@@ -423,21 +513,47 @@
 
     <header>
         <div class="container">
+
             <nav>
 
-                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+                <a href="index.html" class="logo">
+                    Jeffrey Jaymot
+                </a>
 
                 <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cv.html">CV & Resume</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="coaching.html">Coaching & Athletics</a></li>
-                    <li><a href="skills.html">Skills & Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="cv.html">CV & Resume</a>
+                    </li>
+
+                    <li>
+                        <a href="research.html">Research</a>
+                    </li>
+
+                    <li>
+                        <a href="coaching.html">Coaching & Athletics</a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">Skills & Certifications</a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
                 </ul>
 
             </nav>
+
         </div>
     </header>
 
@@ -449,45 +565,65 @@
         =============================== -->
 
         <section class="hero">
+
             <div class="container">
 
-                <div class="hero-content">
+                <div class="hero-grid">
 
-                    <p class="eyebrow">
-                        Leadership • Kinesiology • Education • Research
-                    </p>
+                    <div class="hero-content">
 
-                    <h1>Jeffrey Jaymot</h1>
+                        <p class="eyebrow">
+                            Leadership • Kinesiology • Education • Research
+                        </p>
 
-                    <p class="hero-title">
-                        Program Leader, Educator & Kinesiology Researcher
-                    </p>
+                        <h1>
+                            Jeffrey Jaymot
+                        </h1>
 
-                    <p class="hero-description">
-                        Multidisciplinary professional with experience across
-                        sport and recreation leadership, education, athletics,
-                        research, program development, and community physical
-                        activity. My work focuses on creating effective programs,
-                        developing people, and improving access to meaningful
-                        physical activity opportunities.
-                    </p>
+                        <p class="hero-title">
+                            Program Leader, Educator & Kinesiology Researcher
+                        </p>
 
-                    <div class="hero-buttons">
-                        <a href="cv.html" class="btn btn-primary">
-                            View CV & Resume
-                        </a>
+                        <p class="hero-description">
+                            Multidisciplinary professional working across sport,
+                            recreation, education, research, and program development.
+                            My work centers on building effective programs, developing
+                            people, and expanding meaningful opportunities for physical
+                            activity and participation.
+                        </p>
 
-                        <a href="research.html" class="btn btn-secondary">
-                            Research
-                        </a>
+                        <div class="hero-buttons">
 
-                        <a href="contact.html" class="btn btn-secondary">
-                            Contact
-                        </a>
+                            <a href="cv.html" class="btn btn-primary">
+                                CV & Resume
+                            </a>
+
+                            <a href="research.html" class="btn btn-secondary">
+                                Research
+                            </a>
+
+                            <a href="contact.html" class="btn btn-secondary">
+                                Contact
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-photo-wrap">
+
+                        <img
+                            src="banquet.JPEG"
+                            alt="Jeffrey Jaymot"
+                            class="hero-photo">
+
                     </div>
 
                 </div>
+
             </div>
+
         </section>
 
 
@@ -496,9 +632,12 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Professional Snapshot</h2>
+                <h2 class="section-title">
+                    Professional Snapshot
+                </h2>
 
                 <p class="section-intro">
                     A career spanning program leadership, education, research,
@@ -508,39 +647,158 @@
                 <div class="snapshot-grid">
 
                     <div class="snapshot-card">
-                        <h3>Program Leadership</h3>
+
+                        <h3>
+                            Program Leadership
+                        </h3>
+
                         <p>
-                            Experience leading athletic, educational, recreational,
-                            and community programs.
+                            Experience leading athletic, educational,
+                            recreational, and community programs.
                         </p>
+
                     </div>
 
+
                     <div class="snapshot-card">
-                        <h3>Research</h3>
+
+                        <h3>
+                            Research
+                        </h3>
+
                         <p>
                             Doctoral research examining physical activity,
                             environmental access, and community experience.
                         </p>
+
                     </div>
 
+
                     <div class="snapshot-card">
-                        <h3>Education</h3>
+
+                        <h3>
+                            Education
+                        </h3>
+
                         <p>
                             Extensive experience in teaching, curriculum,
                             instructional technology, and student development.
                         </p>
+
                     </div>
 
+
                     <div class="snapshot-card">
-                        <h3>Sport & Athletics</h3>
+
+                        <h3>
+                            Sport & Athletics
+                        </h3>
+
                         <p>
                             Leadership and coaching experience across school,
                             collegiate, community, and youth sport settings.
                         </p>
+
                     </div>
 
                 </div>
+
             </div>
+
+        </section>
+
+
+        <!-- ===============================
+             CURRENT ROLES
+        =============================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Current Roles
+                </h2>
+
+                <p class="section-intro">
+                    Current professional and academic work across research,
+                    sport programming, and community physical activity.
+                </p>
+
+                <div class="current-grid">
+
+                    <div class="current-card">
+
+                        <p class="current-status">
+                            Research
+                        </p>
+
+                        <h3>
+                            Doctoral Researcher
+                        </h3>
+
+                        <h4>
+                            University of North Carolina Greensboro
+                        </h4>
+
+                        <p>
+                            Conducting doctoral research examining physical
+                            activity access, community environments, historical
+                            inequities, and lived experience.
+                        </p>
+
+                    </div>
+
+
+                    <div class="current-card">
+
+                        <p class="current-status">
+                            Sport & Recreation
+                        </p>
+
+                        <h3>
+                            Tennis Instructor & Program Leader
+                        </h3>
+
+                        <h4>
+                            Community Recreation & USTA Programming
+                        </h4>
+
+                        <p>
+                            Developing youth and adult tennis opportunities,
+                            supporting player development, and coordinating
+                            competitive and instructional programming.
+                        </p>
+
+                    </div>
+
+
+                    <div class="current-card">
+
+                        <p class="current-status">
+                            Program Development
+                        </p>
+
+                        <h3>
+                            Sport & Physical Activity Programming
+                        </h3>
+
+                        <h4>
+                            Community-Based Initiatives
+                        </h4>
+
+                        <p>
+                            Developing accessible sport, recreation, and physical
+                            activity opportunities through program design,
+                            instruction, leadership, and community engagement.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
 
@@ -548,10 +806,13 @@
              CURRENT FOCUS
         =============================== -->
 
-        <section class="section">
+        <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Current Focus</h2>
+                <h2 class="section-title">
+                    Current Focus
+                </h2>
 
                 <p class="section-intro">
                     My current work connects research, community programming,
@@ -561,45 +822,65 @@
                 <div class="focus-grid">
 
                     <article class="focus-card">
-                        <div class="focus-number">01</div>
 
-                        <h3>Doctoral Research</h3>
+                        <div class="focus-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Doctoral Research
+                        </h3>
 
                         <p>
                             Exploring how historical, environmental, and social
                             conditions influence access to and engagement with
                             physical activity spaces.
                         </p>
+
                     </article>
 
 
                     <article class="focus-card">
-                        <div class="focus-number">02</div>
 
-                        <h3>Sport & Recreation</h3>
+                        <div class="focus-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Sport & Recreation
+                        </h3>
 
                         <p>
                             Developing sustainable programming that connects
                             athletics, recreation, physical activity, and
                             community engagement.
                         </p>
+
                     </article>
 
 
                     <article class="focus-card">
-                        <div class="focus-number">03</div>
 
-                        <h3>Coaching & Development</h3>
+                        <div class="focus-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Coaching & Development
+                        </h3>
 
                         <p>
                             Supporting athlete development through structured
                             instruction, long-term development, and positive
                             sport experiences.
                         </p>
+
                     </article>
 
                 </div>
+
             </div>
+
         </section>
 
 
@@ -607,49 +888,78 @@
              CAREER HIGHLIGHTS
         =============================== -->
 
-        <section class="section section-light">
+        <section class="section">
+
             <div class="container">
 
-                <h2 class="section-title">Career Highlights</h2>
+                <h2 class="section-title">
+                    Career Highlights
+                </h2>
 
                 <p class="section-intro">
-                    Selected indicators of leadership experience and professional
-                    scope.
+                    Selected indicators of leadership experience,
+                    professional scope, and program impact.
                 </p>
 
                 <div class="highlights-grid">
 
                     <div class="highlight">
-                        <div class="highlight-value">220+</div>
+
+                        <div class="highlight-value">
+                            220+
+                        </div>
+
                         <div class="highlight-label">
                             Athletic events managed annually
                         </div>
+
                     </div>
 
-                    <div class="highlight">
-                        <div class="highlight-value">10+</div>
-                        <div class="highlight-label">
-                            Years in coaching and sport development
-                        </div>
-                    </div>
 
                     <div class="highlight">
-                        <div class="highlight-value">4</div>
-                        <div class="highlight-label">
-                            Graduate degree programs completed or pursued
+
+                        <div class="highlight-value">
+                            10+
                         </div>
+
+                        <div class="highlight-label">
+                            Years of coaching and athlete development
+                        </div>
+
                     </div>
 
+
                     <div class="highlight">
-                        <div class="highlight-value">Multi</div>
-                        <div class="highlight-label">
-                            Sector experience across education, athletics,
-                            recreation, and research
+
+                        <div class="highlight-value">
+                            20.5% → 47.8%
                         </div>
+
+                        <div class="highlight-label">
+                            Improvement in varsity program win percentage
+                            during athletic leadership
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            4
+                        </div>
+
+                        <div class="highlight-label">
+                            Graduate degree programs across kinesiology,
+                            education, technology, and business
+                        </div>
+
                     </div>
 
                 </div>
+
             </div>
+
         </section>
 
 
@@ -657,10 +967,13 @@
              EDUCATION
         =============================== -->
 
-        <section class="section">
+        <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title">
+                    Graduate Education
+                </h2>
 
                 <p class="section-intro">
                     Interdisciplinary graduate preparation spanning kinesiology,
@@ -669,27 +982,39 @@
 
                 <div class="education-list">
 
+
                     <div class="education-item">
+
                         <div class="degree">
                             Doctor of Education
                         </div>
 
                         <div class="education-detail">
                             Kinesiology — University of North Carolina Greensboro
+                            <br>
+                            <small>In Progress • Expected 2027</small>
                         </div>
+
                     </div>
 
+
                     <div class="education-item">
+
                         <div class="degree">
                             Master of Business Administration
                         </div>
 
                         <div class="education-detail">
                             Business Analytics — Fitchburg State University
+                            <br>
+                            <small>In Progress • Expected 2026</small>
                         </div>
+
                     </div>
 
+
                     <div class="education-item">
+
                         <div class="degree">
                             Master of Science
                         </div>
@@ -697,22 +1022,31 @@
                         <div class="education-detail">
                             Educational Technology — California State University,
                             East Bay
+                            <br>
+                            <small>Completed 2020</small>
                         </div>
+
                     </div>
 
+
                     <div class="education-item">
+
                         <div class="degree">
                             Master of Arts
                         </div>
 
                         <div class="education-detail">
                             Kinesiology — Saint Mary's College of California
+                            <br>
+                            <small>Completed 2015</small>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
+
         </section>
 
 
@@ -720,14 +1054,17 @@
              PROFESSIONAL AREAS
         =============================== -->
 
-        <section class="section section-light">
+        <section class="section">
+
             <div class="container">
 
-                <h2 class="section-title">Professional Areas</h2>
+                <h2 class="section-title">
+                    Professional Areas
+                </h2>
 
                 <p class="section-intro">
-                    Areas represented throughout my professional, academic,
-                    and leadership experience.
+                    Areas represented throughout my professional,
+                    academic, and leadership experience.
                 </p>
 
                 <div class="areas">
@@ -748,14 +1085,16 @@
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- ===============================
-             CALL TO ACTION
+             CTA
         =============================== -->
 
         <section class="cta">
+
             <div class="container">
 
                 <h2>
@@ -773,6 +1112,7 @@
                 </a>
 
             </div>
+
         </section>
 
     </main>
@@ -783,6 +1123,7 @@
     =============================== -->
 
     <footer>
+
         <div class="container footer-content">
 
             <div>
@@ -794,6 +1135,7 @@
             </div>
 
         </div>
+
     </footer>
 
 </body>

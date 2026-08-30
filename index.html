@@ -8,7 +8,7 @@
     <title>Jeffrey Jaymot | Professional Portfolio</title>
 
     <meta name="description"
-        content="Professional portfolio of Jeffrey Jaymot, featuring leadership, kinesiology, education, research, athletics, and community programming.">
+        content="Professional portfolio of Jeffrey Jaymot, highlighting program development, athletic leadership, coaching, kinesiology, education, research, and community recreation.">
 
     <style>
 
@@ -67,7 +67,7 @@
         }
 
         .section-intro {
-            max-width: 720px;
+            max-width: 760px;
             color: #60646c;
             margin-bottom: 45px;
             font-size: 1.05rem;
@@ -154,10 +154,17 @@
         }
 
         .hero-title {
-            font-size: clamp(1.25rem, 3vw, 1.7rem);
-            font-weight: 500;
+            font-size: clamp(1.3rem, 3vw, 1.75rem);
+            font-weight: 600;
+            color: #303030;
+            margin-bottom: 6px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #777;
             margin-bottom: 25px;
-            color: #383838;
         }
 
         .hero-description {
@@ -183,9 +190,8 @@
             max-width: 340px;
             aspect-ratio: 4 / 5;
             object-fit: cover;
-            object-position: center;
+            object-position: center 25%;
             border-radius: 10px;
-            filter: grayscale(8%);
         }
 
         /* ===============================
@@ -288,63 +294,75 @@
         }
 
         /* ===============================
-           CURRENT FOCUS
-        =============================== */
-
-        .focus-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .focus-card {
-            padding: 35px;
-            border: 1px solid #e4e4e4;
-            border-radius: 8px;
-            background: #fff;
-        }
-
-        .focus-number {
-            font-size: 0.8rem;
-            font-weight: bold;
-            color: #999;
-            margin-bottom: 45px;
-        }
-
-        .focus-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 12px;
-        }
-
-        .focus-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* ===============================
            CAREER HIGHLIGHTS
         =============================== */
 
+        .career-summary {
+            max-width: 850px;
+            margin-bottom: 50px;
+        }
+
+        .career-summary h3 {
+            font-size: 1.45rem;
+            letter-spacing: -0.025em;
+            margin-bottom: 12px;
+        }
+
+        .career-summary p {
+            color: #60646c;
+            font-size: 1.02rem;
+        }
+
         .highlights-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 45px 35px;
         }
 
         .highlight {
-            padding-right: 20px;
+            border-top: 1px solid #d7d7d7;
+            padding-top: 22px;
         }
 
         .highlight-value {
-            font-size: 2.15rem;
+            font-size: 2.7rem;
+            line-height: 1;
             font-weight: 700;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.05em;
+            margin-bottom: 12px;
+        }
+
+        .highlight-value.long-value {
+            font-size: 2rem;
+        }
+
+        .highlight-title {
+            font-size: 1rem;
+            font-weight: 700;
             margin-bottom: 6px;
         }
 
         .highlight-label {
             color: #666;
             font-size: 0.92rem;
+            max-width: 285px;
+        }
+
+        .recognition-box {
+            margin-top: 55px;
+            padding: 32px 0 0;
+            border-top: 1px solid #d7d7d7;
+            max-width: 900px;
+        }
+
+        .recognition-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+
+        .recognition-box p {
+            color: #60646c;
+            font-size: 0.98rem;
         }
 
         /* ===============================
@@ -464,14 +482,16 @@
                 max-width: 300px;
             }
 
-            .snapshot-grid,
-            .highlights-grid {
+            .snapshot-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .current-grid,
-            .focus-grid {
+            .current-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -512,6 +532,7 @@
     =============================== -->
 
     <header>
+
         <div class="container">
 
             <nav>
@@ -522,39 +543,20 @@
 
                 <ul class="nav-links">
 
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-
-                    <li>
-                        <a href="cv.html">CV & Resume</a>
-                    </li>
-
-                    <li>
-                        <a href="research.html">Research</a>
-                    </li>
-
-                    <li>
-                        <a href="coaching.html">Coaching & Athletics</a>
-                    </li>
-
-                    <li>
-                        <a href="skills.html">Skills & Certifications</a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="cv.html">CV & Resume</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="coaching.html">Coaching & Athletics</a></li>
+                    <li><a href="skills.html">Skills & Certifications</a></li>
+                    <li><a href="contact.html">Contact</a></li>
 
                 </ul>
 
             </nav>
 
         </div>
+
     </header>
 
 
@@ -573,7 +575,7 @@
                     <div class="hero-content">
 
                         <p class="eyebrow">
-                            Leadership • Kinesiology • Education • Research
+                            Leadership • Sport • Education • Kinesiology
                         </p>
 
                         <h1>
@@ -581,15 +583,21 @@
                         </h1>
 
                         <p class="hero-title">
-                            Program Leader, Educator & Kinesiology Researcher
+                            Program Builder, Coach & Athletic Leader
+                        </p>
+
+                        <p class="hero-subtitle">
+                            Educator & Kinesiology Researcher
                         </p>
 
                         <p class="hero-description">
-                            Multidisciplinary professional working across sport,
-                            recreation, education, research, and program development.
-                            My work centers on building effective programs, developing
-                            people, and expanding meaningful opportunities for physical
-                            activity and participation.
+                            Multidisciplinary professional with experience
+                            building and leading athletic, recreation,
+                            educational, and community-based programs.
+                            My work combines program development, coaching,
+                            athletic administration, education, and research
+                            to create stronger systems and meaningful
+                            opportunities for participation and development.
                         </p>
 
                         <div class="hero-buttons">
@@ -640,8 +648,9 @@
                 </h2>
 
                 <p class="section-intro">
-                    A career spanning program leadership, education, research,
-                    athletics, coaching, and community-based physical activity.
+                    A career spanning program development, athletic leadership,
+                    education, research, coaching, and community-based
+                    physical activity.
                 </p>
 
                 <div class="snapshot-grid">
@@ -649,12 +658,43 @@
                     <div class="snapshot-card">
 
                         <h3>
-                            Program Leadership
+                            Program Building
                         </h3>
 
                         <p>
-                            Experience leading athletic, educational,
-                            recreational, and community programs.
+                            Experience developing athletic, educational,
+                            recreational, and community programs from concept
+                            through implementation and growth.
+                        </p>
+
+                    </div>
+
+
+                    <div class="snapshot-card">
+
+                        <h3>
+                            Athletic Leadership
+                        </h3>
+
+                        <p>
+                            Experience in athletic administration, event
+                            operations, coaching support, facilities,
+                            scheduling, and student-athlete programming.
+                        </p>
+
+                    </div>
+
+
+                    <div class="snapshot-card">
+
+                        <h3>
+                            Coaching & Education
+                        </h3>
+
+                        <p>
+                            Extensive experience developing athletes and
+                            students through coaching, instruction, curriculum,
+                            mentorship, and long-term development.
                         </p>
 
                     </div>
@@ -667,36 +707,9 @@
                         </h3>
 
                         <p>
-                            Doctoral research examining physical activity,
-                            environmental access, and community experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="snapshot-card">
-
-                        <h3>
-                            Education
-                        </h3>
-
-                        <p>
-                            Extensive experience in teaching, curriculum,
-                            instructional technology, and student development.
-                        </p>
-
-                    </div>
-
-
-                    <div class="snapshot-card">
-
-                        <h3>
-                            Sport & Athletics
-                        </h3>
-
-                        <p>
-                            Leadership and coaching experience across school,
-                            collegiate, community, and youth sport settings.
+                            Doctoral research focused on physical activity
+                            access, environmental conditions, historical
+                            inequities, and community experience.
                         </p>
 
                     </div>
@@ -721,11 +734,15 @@
                 </h2>
 
                 <p class="section-intro">
-                    Current professional and academic work across research,
-                    sport programming, and community physical activity.
+                    Current professional and academic work spanning doctoral
+                    research, community recreation, coaching, and sport
+                    program development.
                 </p>
 
                 <div class="current-grid">
+
+
+                    <!-- DOCTORAL RESEARCH -->
 
                     <div class="current-card">
 
@@ -738,144 +755,69 @@
                         </h3>
 
                         <h4>
-                            University of North Carolina Greensboro
+                            EdD in Kinesiology, ABD • University of North Carolina Greensboro
                         </h4>
 
                         <p>
-                            Conducting doctoral research examining physical
-                            activity access, community environments, historical
-                            inequities, and lived experience.
+                            Conducting mixed-methods doctoral research examining
+                            physical activity access, community environments,
+                            historical inequities, and lived experience.
                         </p>
 
                     </div>
 
 
+                    <!-- TENNIS -->
+
                     <div class="current-card">
 
                         <p class="current-status">
-                            Sport & Recreation
+                            Coaching & Instruction
                         </p>
 
                         <h3>
-                            Tennis Instructor & Program Leader
+                            Tennis Instructor
                         </h3>
 
                         <h4>
-                            Community Recreation & USTA Programming
+                            Community Recreation & Player Development
                         </h4>
 
                         <p>
-                            Developing youth and adult tennis opportunities,
-                            supporting player development, and coordinating
-                            competitive and instructional programming.
+                            Providing youth and adult tennis instruction across
+                            recreational and competitive settings with an
+                            emphasis on skill development, match play,
+                            and long-term athlete development.
                         </p>
 
                     </div>
 
 
+                    <!-- PROGRAM BUILDING / JTT -->
+
                     <div class="current-card">
 
                         <p class="current-status">
-                            Program Development
-                        </p>
-
-                        <h3>
                             Sport & Physical Activity Programming
+                        </p>
+
+                        <h3>
+                            Program Builder & Junior Team Tennis Coordinator
                         </h3>
 
                         <h4>
-                            Community-Based Initiatives
+                            Community-Based Sport & USTA Programming
                         </h4>
 
                         <p>
-                            Developing accessible sport, recreation, and physical
-                            activity opportunities through program design,
-                            instruction, leadership, and community engagement.
+                            Building and coordinating sport and physical activity
+                            programs, including USTA Junior Team Tennis, with
+                            responsibility for program development, participant
+                            engagement, coaching coordination, competition,
+                            and seasonal operations.
                         </p>
 
                     </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ===============================
-             CURRENT FOCUS
-        =============================== -->
-
-        <section class="section section-light">
-
-            <div class="container">
-
-                <h2 class="section-title">
-                    Current Focus
-                </h2>
-
-                <p class="section-intro">
-                    My current work connects research, community programming,
-                    sport, education, and organizational leadership.
-                </p>
-
-                <div class="focus-grid">
-
-                    <article class="focus-card">
-
-                        <div class="focus-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Doctoral Research
-                        </h3>
-
-                        <p>
-                            Exploring how historical, environmental, and social
-                            conditions influence access to and engagement with
-                            physical activity spaces.
-                        </p>
-
-                    </article>
-
-
-                    <article class="focus-card">
-
-                        <div class="focus-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Sport & Recreation
-                        </h3>
-
-                        <p>
-                            Developing sustainable programming that connects
-                            athletics, recreation, physical activity, and
-                            community engagement.
-                        </p>
-
-                    </article>
-
-
-                    <article class="focus-card">
-
-                        <div class="focus-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Coaching & Development
-                        </h3>
-
-                        <p>
-                            Supporting athlete development through structured
-                            instruction, long-term development, and positive
-                            sport experiences.
-                        </p>
-
-                    </article>
 
                 </div>
 
@@ -888,7 +830,7 @@
              CAREER HIGHLIGHTS
         =============================== -->
 
-        <section class="section">
+        <section class="section section-light">
 
             <div class="container">
 
@@ -897,11 +839,117 @@
                 </h2>
 
                 <p class="section-intro">
-                    Selected indicators of leadership experience,
-                    professional scope, and program impact.
+                    Selected outcomes from athletic leadership, varsity coaching,
+                    collegiate coaching, and program development.
                 </p>
 
+
+                <div class="career-summary">
+
+                    <h3>
+                        Richmond High School Athletics
+                    </h3>
+
+                    <p>
+                        During my tenure at Richmond High School, I contributed
+                        to one of the most successful competitive periods in the
+                        school's recent athletic history through leadership in
+                        varsity tennis, basketball, and athletic administration.
+                        The results below reflect both program-wide outcomes
+                        during that period and accomplishments directly earned
+                        through my head coaching roles.
+                    </p>
+
+                </div>
+
+
                 <div class="highlights-grid">
+
+
+                    <!-- 15 CHAMPIONSHIPS -->
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            15
+                        </div>
+
+                        <div class="highlight-title">
+                            Conference Championships
+                        </div>
+
+                        <div class="highlight-label">
+                            Achieved across Richmond High School athletic
+                            programs during my tenure as a coach and
+                            athletic leader.
+                        </div>
+
+                    </div>
+
+
+                    <!-- 10 AS HEAD COACH -->
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            10
+                        </div>
+
+                        <div class="highlight-title">
+                            Championships as Head Coach
+                        </div>
+
+                        <div class="highlight-label">
+                            Conference championships earned through varsity
+                            head coaching across tennis and basketball.
+                        </div>
+
+                    </div>
+
+
+                    <!-- 17 NCS -->
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            17
+                        </div>
+
+                        <div class="highlight-title">
+                            NCS Appearances
+                        </div>
+
+                        <div class="highlight-label">
+                            North Coast Section postseason appearances
+                            achieved across programs during my Richmond
+                            High School tenure.
+                        </div>
+
+                    </div>
+
+
+                    <!-- 2 STATE -->
+
+                    <div class="highlight">
+
+                        <div class="highlight-value">
+                            2
+                        </div>
+
+                        <div class="highlight-title">
+                            CIF State Tournament Berths
+                        </div>
+
+                        <div class="highlight-label">
+                            State-level postseason appearances achieved
+                            during one of the school's strongest recent
+                            competitive periods.
+                        </div>
+
+                    </div>
+
+
+                    <!-- 220 EVENTS -->
 
                     <div class="highlight">
 
@@ -909,52 +957,61 @@
                             220+
                         </div>
 
+                        <div class="highlight-title">
+                            Athletic Events Annually
+                        </div>
+
                         <div class="highlight-label">
-                            Athletic events managed annually
+                            Junior varsity and varsity contests coordinated
+                            annually through athletic administration,
+                            scheduling, facilities, logistics, and event
+                            operations.
                         </div>
 
                     </div>
 
 
-                    <div class="highlight">
-
-                        <div class="highlight-value">
-                            10+
-                        </div>
-
-                        <div class="highlight-label">
-                            Years of coaching and athlete development
-                        </div>
-
-                    </div>
-
+                    <!-- WIN PERCENTAGE -->
 
                     <div class="highlight">
 
-                        <div class="highlight-value">
+                        <div class="highlight-value long-value">
                             20.5% → 47.8%
                         </div>
 
+                        <div class="highlight-title">
+                            Varsity Program Win Rate
+                        </div>
+
                         <div class="highlight-label">
-                            Improvement in varsity program win percentage
-                            during athletic leadership
+                            Improvement in overall varsity program win
+                            percentage during my period of athletic
+                            leadership.
                         </div>
 
                     </div>
 
+                </div>
 
-                    <div class="highlight">
 
-                        <div class="highlight-value">
-                            4
-                        </div>
+                <!-- RECOGNITION -->
 
-                        <div class="highlight-label">
-                            Graduate degree programs across kinesiology,
-                            education, technology, and business
-                        </div>
+                <div class="recognition-box">
 
-                    </div>
+                    <h3>
+                        Recognition & Program Development
+                    </h3>
+
+                    <p>
+                        Recognized with the North Coast Section Girls'
+                        Tennis Honor Coach Award in 2022 and the
+                        Intercollegiate Tennis Association Junior College
+                        Assistant Coach of the Year honor for Region I –
+                        California in 2015. Additional program-building work
+                        included community outreach, grant-supported
+                        initiatives, and expanded opportunities for
+                        student-athlete participation and development.
+                    </p>
 
                 </div>
 
@@ -967,7 +1024,7 @@
              EDUCATION
         =============================== -->
 
-        <section class="section section-light">
+        <section class="section">
 
             <div class="container">
 
@@ -992,7 +1049,7 @@
                         <div class="education-detail">
                             Kinesiology — University of North Carolina Greensboro
                             <br>
-                            <small>In Progress • Expected 2027</small>
+                            <small>In Progress • ABD • Expected 2027</small>
                         </div>
 
                     </div>
@@ -1054,7 +1111,7 @@
              PROFESSIONAL AREAS
         =============================== -->
 
-        <section class="section">
+        <section class="section section-light">
 
             <div class="container">
 
@@ -1064,20 +1121,21 @@
 
                 <p class="section-intro">
                     Areas represented throughout my professional,
-                    academic, and leadership experience.
+                    academic, coaching, and leadership experience.
                 </p>
 
                 <div class="areas">
 
-                    <span class="area">Program Leadership</span>
+                    <span class="area">Program Development</span>
+                    <span class="area">Athletic Leadership</span>
                     <span class="area">Kinesiology</span>
                     <span class="area">Sport Management</span>
-                    <span class="area">Recreation</span>
+                    <span class="area">Community Recreation</span>
                     <span class="area">Athletic Administration</span>
                     <span class="area">Research</span>
                     <span class="area">Education</span>
                     <span class="area">Coaching</span>
-                    <span class="area">Program Development</span>
+                    <span class="area">Player Development</span>
                     <span class="area">Instructional Technology</span>
                     <span class="area">Business Analytics</span>
                     <span class="area">Community Physical Activity</span>
@@ -1098,13 +1156,13 @@
             <div class="container">
 
                 <h2>
-                    Leadership through sport, education, research, and community.
+                    Building programs. Developing people. Strengthening organizations.
                 </h2>
 
                 <p>
-                    Explore my professional background, research, coaching
-                    experience, education, and qualifications throughout this
-                    portfolio.
+                    Explore my professional background, research, athletic
+                    leadership, coaching experience, education, and
+                    qualifications throughout this portfolio.
                 </p>
 
                 <a href="about.html" class="btn">
@@ -1131,7 +1189,7 @@
             </div>
 
             <div>
-                Kinesiology • Education • Leadership • Research
+                Leadership • Sport • Education • Research
             </div>
 
         </div>

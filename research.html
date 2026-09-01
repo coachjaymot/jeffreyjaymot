@@ -11,6 +11,7 @@
         content="Research by Jeffrey Jaymot focused on kinesiology, physical activity access, environmental justice, the built environment, and community physical activity.">
 
     <style>
+
         /* ===============================
            RESET
         =============================== */
@@ -90,6 +91,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -114,6 +116,40 @@
         .nav-links a.active {
             color: #000;
             font-weight: 600;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #ffffff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #202124;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* ===============================
@@ -393,8 +429,41 @@
 
         @media (max-width: 900px) {
 
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                border: 1px solid #e4e4e4;
+                border-top: none;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px;
+                font-size: 0.96rem;
+            }
+
+            .nav-links a:hover {
+                background: #f7f7f7;
             }
 
             .overview-grid {
@@ -431,6 +500,7 @@
                 flex-direction: column;
             }
         }
+
     </style>
 </head>
 
@@ -442,23 +512,78 @@
     =============================== -->
 
     <header>
+
         <div class="container">
+
             <nav>
 
-                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+                <a href="index.html" class="logo">
+                    Jeffrey Jaymot
+                </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cv.html">CV & Resume</a></li>
-                    <li><a href="research.html" class="active">Research</a></li>
-                    <li><a href="coaching.html">Coaching & Athletics</a></li>
-                    <li><a href="skills.html">Skills & Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <ul class="nav-links" id="primary-navigation">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cv.html">
+                            CV & Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="research.html" class="active">
+                            Research
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="coaching.html">
+                            Coaching & Athletics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills & Certifications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
 
             </nav>
+
         </div>
+
     </header>
 
 
@@ -469,9 +594,12 @@
         =============================== -->
 
         <section class="page-hero">
+
             <div class="container">
 
-                <p class="eyebrow">Research</p>
+                <p class="eyebrow">
+                    Research
+                </p>
 
                 <h1>
                     Understanding the environments that shape physical activity.
@@ -485,6 +613,7 @@
                 </p>
 
             </div>
+
         </section>
 
 
@@ -493,6 +622,7 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
                 <div class="overview-grid">
@@ -532,6 +662,7 @@
                 </div>
 
             </div>
+
         </section>
 
 
@@ -540,6 +671,7 @@
         =============================== -->
 
         <section class="section">
+
             <div class="container">
 
                 <div class="research-feature">
@@ -578,6 +710,7 @@
                 </div>
 
             </div>
+
         </section>
 
 
@@ -586,9 +719,12 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Core Research Themes</h2>
+                <h2 class="section-title">
+                    Core Research Themes
+                </h2>
 
                 <p class="section-intro">
                     Several interconnected themes guide the questions I ask and
@@ -597,9 +733,12 @@
 
                 <div class="theme-grid">
 
+
                     <div class="theme-card">
 
-                        <h3>Spatial Access</h3>
+                        <h3>
+                            Spatial Access
+                        </h3>
 
                         <p>
                             Where physical activity resources are located and
@@ -612,7 +751,9 @@
 
                     <div class="theme-card">
 
-                        <h3>Functional Access</h3>
+                        <h3>
+                            Functional Access
+                        </h3>
 
                         <p>
                             Whether available spaces can realistically be used
@@ -625,7 +766,9 @@
 
                     <div class="theme-card">
 
-                        <h3>Historical Context</h3>
+                        <h3>
+                            Historical Context
+                        </h3>
 
                         <p>
                             How historic housing, planning, investment, and
@@ -638,7 +781,9 @@
 
                     <div class="theme-card">
 
-                        <h3>Lived Experience</h3>
+                        <h3>
+                            Lived Experience
+                        </h3>
 
                         <p>
                             How residents perceive, navigate, value, avoid,
@@ -648,9 +793,11 @@
 
                     </div>
 
+
                 </div>
 
             </div>
+
         </section>
 
 
@@ -659,9 +806,12 @@
         =============================== -->
 
         <section class="section">
+
             <div class="container">
 
-                <h2 class="section-title">Research Methods</h2>
+                <h2 class="section-title">
+                    Research Methods
+                </h2>
 
                 <p class="section-intro">
                     My research uses multiple forms of evidence to connect
@@ -670,11 +820,16 @@
 
                 <div class="methods-grid">
 
+
                     <div class="method-card">
 
-                        <div class="method-number">01</div>
+                        <div class="method-number">
+                            01
+                        </div>
 
-                        <h3>Survey Research</h3>
+                        <h3>
+                            Survey Research
+                        </h3>
 
                         <p>
                             Collecting quantitative and descriptive information
@@ -687,9 +842,13 @@
 
                     <div class="method-card">
 
-                        <div class="method-number">02</div>
+                        <div class="method-number">
+                            02
+                        </div>
 
-                        <h3>Interviews</h3>
+                        <h3>
+                            Interviews
+                        </h3>
 
                         <p>
                             Using semi-structured interviews to explore lived
@@ -702,9 +861,13 @@
 
                     <div class="method-card">
 
-                        <div class="method-number">03</div>
+                        <div class="method-number">
+                            03
+                        </div>
 
-                        <h3>GIS & Spatial Analysis</h3>
+                        <h3>
+                            GIS & Spatial Analysis
+                        </h3>
 
                         <p>
                             Mapping physical activity resources and examining
@@ -717,9 +880,13 @@
 
                     <div class="method-card">
 
-                        <div class="method-number">04</div>
+                        <div class="method-number">
+                            04
+                        </div>
 
-                        <h3>Direct Observation</h3>
+                        <h3>
+                            Direct Observation
+                        </h3>
 
                         <p>
                             Examining the physical characteristics, condition,
@@ -729,9 +896,11 @@
 
                     </div>
 
+
                 </div>
 
             </div>
+
         </section>
 
 
@@ -740,9 +909,12 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Conceptual Frameworks</h2>
+                <h2 class="section-title">
+                    Conceptual Frameworks
+                </h2>
 
                 <p class="section-intro">
                     My research draws from frameworks that recognize physical
@@ -752,9 +924,12 @@
 
                 <div class="framework-grid">
 
+
                     <div class="framework-card">
 
-                        <h3>Socioecological Perspective</h3>
+                        <h3>
+                            Socioecological Perspective
+                        </h3>
 
                         <p>
                             Physical activity is influenced by factors operating
@@ -768,7 +943,9 @@
 
                     <div class="framework-card">
 
-                        <h3>Social Determinants of Health</h3>
+                        <h3>
+                            Social Determinants of Health
+                        </h3>
 
                         <p>
                             Health and physical activity opportunities are shaped
@@ -781,7 +958,9 @@
 
                     <div class="framework-card">
 
-                        <h3>Environmental Justice</h3>
+                        <h3>
+                            Environmental Justice
+                        </h3>
 
                         <p>
                             The distribution, quality, accessibility, and
@@ -794,7 +973,9 @@
 
                     <div class="framework-card">
 
-                        <h3>Ecological Systems Thinking</h3>
+                        <h3>
+                            Ecological Systems Thinking
+                        </h3>
 
                         <p>
                             Individual experiences occur within interconnected
@@ -805,9 +986,11 @@
 
                     </div>
 
+
                 </div>
 
             </div>
+
         </section>
 
 
@@ -816,9 +999,12 @@
         =============================== -->
 
         <section class="section">
+
             <div class="container">
 
-                <h2 class="section-title">Why This Research Matters</h2>
+                <h2 class="section-title">
+                    Why This Research Matters
+                </h2>
 
                 <div class="impact-content">
 
@@ -838,6 +1024,7 @@
                     </p>
 
                     <ul class="impact-list">
+
                         <li>
                             Improve how physical activity access is evaluated.
                         </li>
@@ -861,11 +1048,13 @@
                             Connect research findings to practical decisions
                             within communities and public agencies.
                         </li>
+
                     </ul>
 
                 </div>
 
             </div>
+
         </section>
 
 
@@ -874,9 +1063,12 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Research Interests</h2>
+                <h2 class="section-title">
+                    Research Interests
+                </h2>
 
                 <p class="section-intro">
                     Areas that currently shape my scholarly and applied interests.
@@ -884,22 +1076,58 @@
 
                 <div class="interest-tags">
 
-                    <span class="interest-tag">Physical Activity Access</span>
-                    <span class="interest-tag">Built Environment</span>
-                    <span class="interest-tag">Environmental Justice</span>
-                    <span class="interest-tag">Health Equity</span>
-                    <span class="interest-tag">Community Recreation</span>
-                    <span class="interest-tag">Redlining</span>
-                    <span class="interest-tag">GIS</span>
-                    <span class="interest-tag">Social Determinants of Health</span>
-                    <span class="interest-tag">Sport & Recreation Policy</span>
-                    <span class="interest-tag">Program Evaluation</span>
-                    <span class="interest-tag">Community Engagement</span>
-                    <span class="interest-tag">Mixed Methods Research</span>
+                    <span class="interest-tag">
+                        Physical Activity Access
+                    </span>
+
+                    <span class="interest-tag">
+                        Built Environment
+                    </span>
+
+                    <span class="interest-tag">
+                        Environmental Justice
+                    </span>
+
+                    <span class="interest-tag">
+                        Health Equity
+                    </span>
+
+                    <span class="interest-tag">
+                        Community Recreation
+                    </span>
+
+                    <span class="interest-tag">
+                        Redlining
+                    </span>
+
+                    <span class="interest-tag">
+                        GIS
+                    </span>
+
+                    <span class="interest-tag">
+                        Social Determinants of Health
+                    </span>
+
+                    <span class="interest-tag">
+                        Sport & Recreation Policy
+                    </span>
+
+                    <span class="interest-tag">
+                        Program Evaluation
+                    </span>
+
+                    <span class="interest-tag">
+                        Community Engagement
+                    </span>
+
+                    <span class="interest-tag">
+                        Mixed Methods Research
+                    </span>
 
                 </div>
 
             </div>
+
         </section>
 
 
@@ -908,6 +1136,7 @@
         =============================== -->
 
         <section class="cta">
+
             <div class="container">
 
                 <h2>
@@ -925,7 +1154,9 @@
                 </a>
 
             </div>
+
         </section>
+
 
     </main>
 
@@ -949,6 +1180,92 @@
         </div>
 
     </footer>
+
+
+    <!-- ===============================
+         MOBILE NAVIGATION
+    =============================== -->
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener('click', () => {
+
+                const isOpen = navLinks.classList.toggle('open');
+
+                menuToggle.classList.toggle(
+                    'active',
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen
+                        ? 'Close navigation menu'
+                        : 'Open navigation menu'
+                );
+
+            });
+
+
+            navLinks.querySelectorAll('a').forEach(link => {
+
+                link.addEventListener('click', () => {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                });
+
+            });
+
+
+            window.addEventListener('resize', () => {
+
+                if (window.innerWidth > 900) {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
+
 
 </body>
 

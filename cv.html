@@ -11,6 +11,7 @@
         content="View Jeffrey Jaymot's curriculum vitae and professional resume, including experience in kinesiology, education, athletics, research, recreation, and program leadership.">
 
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -59,7 +60,9 @@
             font-size: 1.05rem;
         }
 
-        /* NAVIGATION */
+        /* ===============================
+           NAVIGATION
+        =============================== */
 
         header {
             position: sticky;
@@ -75,6 +78,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -101,7 +105,43 @@
             font-weight: 600;
         }
 
-        /* HERO */
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #ffffff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #202124;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* ===============================
+           HERO
+        =============================== */
 
         .page-hero {
             padding: 120px 0 100px;
@@ -120,16 +160,11 @@
             font-size: clamp(3rem, 7vw, 5rem);
             line-height: 1;
             letter-spacing: -0.05em;
-            margin-bottom: 28px;
         }
 
-        .page-hero p {
-            max-width: 800px;
-            font-size: 1.2rem;
-            color: #5f6368;
-        }
-
-        /* DOCUMENT CARDS */
+        /* ===============================
+           DOCUMENT CARDS
+        =============================== */
 
         .document-grid {
             display: grid;
@@ -141,7 +176,7 @@
             border: 1px solid #e2e2e2;
             border-radius: 9px;
             padding: 40px;
-            background: #fff;
+            background: #ffffff;
         }
 
         .document-label {
@@ -182,7 +217,7 @@
 
         .btn-primary {
             background: #181818;
-            color: white;
+            color: #ffffff;
         }
 
         .btn-primary:hover {
@@ -191,36 +226,16 @@
 
         .btn-secondary {
             border: 1px solid #ccc;
-            background: white;
+            background: #ffffff;
         }
 
         .btn-secondary:hover {
             border-color: #777;
         }
 
-        /* PROFESSIONAL SUMMARY */
-
-        .summary-grid {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 70px;
-        }
-
-        .summary-label {
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #777;
-        }
-
-        .summary-content p {
-            color: #51555a;
-            font-size: 1.05rem;
-            margin-bottom: 20px;
-        }
-
-        /* EXPERIENCE */
+        /* ===============================
+           EXPERIENCE
+        =============================== */
 
         .experience-list {
             max-width: 920px;
@@ -256,17 +271,34 @@
             font-size: 0.94rem;
         }
 
-        /* EDUCATION */
+        /* ===============================
+           EDUCATION
+        =============================== */
+
+        .education-group {
+            max-width: 950px;
+            margin-bottom: 65px;
+        }
+
+        .education-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-group-title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
 
         .education-list {
-            max-width: 900px;
+            width: 100%;
         }
 
         .education-item {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 30px;
-            padding: 24px 0;
+            padding: 22px 0;
             border-bottom: 1px solid #ddd;
         }
 
@@ -278,12 +310,21 @@
             color: #5e5e5e;
         }
 
-        /* CTA */
+        .education-detail small {
+            display: block;
+            color: #888;
+            margin-top: 3px;
+            font-size: 0.83rem;
+        }
+
+        /* ===============================
+           CTA
+        =============================== */
 
         .cta {
             padding: 100px 0;
             background: #181818;
-            color: #fff;
+            color: #ffffff;
         }
 
         .cta h2 {
@@ -301,11 +342,13 @@
         }
 
         .cta .btn {
-            background: white;
+            background: #ffffff;
             color: #181818;
         }
 
-        /* FOOTER */
+        /* ===============================
+           FOOTER
+        =============================== */
 
         footer {
             background: #181818;
@@ -321,101 +364,224 @@
             font-size: 0.85rem;
         }
 
-        /* RESPONSIVE */
+        /* ===============================
+           RESPONSIVE
+        =============================== */
 
         @media (max-width: 900px) {
 
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                border: 1px solid #e4e4e4;
+                border-top: none;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px;
+                font-size: 0.96rem;
+            }
+
+            .nav-links a:hover {
+                background: #f7f7f7;
             }
 
             .document-grid {
                 grid-template-columns: 1fr;
             }
 
-            .summary-grid {
-                grid-template-columns: 1fr;
-                gap: 25px;
-            }
-
             .experience-item {
                 grid-template-columns: 1fr;
                 gap: 8px;
             }
+
         }
 
         @media (max-width: 600px) {
 
+            .container {
+                width: min(1120px, 92%);
+            }
+
             .section {
-                padding: 65px 0;
+                padding: 55px 0;
             }
 
             .page-hero {
-                padding: 90px 0 70px;
+                padding: 70px 0 60px;
+            }
+
+            .page-hero h1 {
+                font-size: clamp(2.6rem, 12vw, 4rem);
+            }
+
+            .document-card {
+                padding: 28px 24px;
             }
 
             .education-item {
                 grid-template-columns: 1fr;
                 gap: 5px;
+                padding: 18px 0;
+            }
+
+            .education-group {
+                margin-bottom: 45px;
+            }
+
+            .cta {
+                padding: 70px 0;
             }
 
             .footer-content {
                 flex-direction: column;
             }
+
         }
+
     </style>
 </head>
 
+
 <body>
 
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
+
     <header>
+
         <div class="container">
+
             <nav>
 
-                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+                <a href="index.html" class="logo">
+                    Jeffrey Jaymot
+                </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cv.html" class="active">CV & Resume</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="coaching.html">Coaching & Athletics</a></li>
-                    <li><a href="skills.html">Skills & Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <ul class="nav-links" id="primary-navigation">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cv.html" class="active">
+                            CV & Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="research.html">
+                            Research
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="coaching.html">
+                            Coaching & Athletics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills & Certifications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
 
             </nav>
+
         </div>
+
     </header>
 
 
     <main>
 
-        <!-- HERO -->
+        <!-- ===============================
+             HERO
+        =============================== -->
 
         <section class="page-hero">
+
             <div class="container">
 
-                <p class="eyebrow">CV & Resume</p>
-
-                <h1>Professional Experience & Qualifications</h1>
-
-                <p>
-                    My professional background spans kinesiology, education,
-                    athletic administration, coaching, recreation, research,
-                    technology, and program leadership.
+                <p class="eyebrow">
+                    CV & Resume
                 </p>
 
+                <h1>
+                    Professional Experience & Qualifications
+                </h1>
+
             </div>
+
         </section>
 
 
-        <!-- CV / RESUME DOWNLOADS -->
+        <!-- ===============================
+             PROFESSIONAL DOCUMENTS
+        =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Professional Documents</h2>
+                <h2 class="section-title">
+                    Professional Documents
+                </h2>
 
                 <p class="section-intro">
                     Choose the format that best fits your needs. My resume
@@ -425,13 +591,16 @@
 
                 <div class="document-grid">
 
+
                     <div class="document-card">
 
                         <div class="document-label">
                             Concise Professional Overview
                         </div>
 
-                        <h2>Resume</h2>
+                        <h2>
+                            Resume
+                        </h2>
 
                         <p>
                             A focused summary of professional experience,
@@ -441,16 +610,22 @@
 
                         <div class="document-buttons">
 
-                            <a href="Portfolio Resume 8-26.pdf"
-                               target="_blank"
-                               class="btn btn-primary">
+                            <a
+                                href="Portfolio Resume 8-26.pdf"
+                                target="_blank"
+                                class="btn btn-primary">
+
                                 View Resume
+
                             </a>
 
-                            <a href="Portfolio Resume 8-26.pdf"
-                               download
-                               class="btn btn-secondary">
+                            <a
+                                href="Portfolio Resume 8-26.pdf"
+                                download
+                                class="btn btn-secondary">
+
                                 Download PDF
+
                             </a>
 
                         </div>
@@ -464,7 +639,9 @@
                             Comprehensive Professional Record
                         </div>
 
-                        <h2>Curriculum Vitae</h2>
+                        <h2>
+                            Curriculum Vitae
+                        </h2>
 
                         <p>
                             A comprehensive record of education, employment,
@@ -474,80 +651,50 @@
 
                         <div class="document-buttons">
 
-                            <a href="CVportfolio.pdf"
-                               target="_blank"
-                               class="btn btn-primary">
+                            <a
+                                href="CVportfolio.pdf"
+                                target="_blank"
+                                class="btn btn-primary">
+
                                 View CV
+
                             </a>
 
-                            <a href="CVportfolio.pdf"
-                               download
-                               class="btn btn-secondary">
+                            <a
+                                href="CVportfolio.pdf"
+                                download
+                                class="btn btn-secondary">
+
                                 Download PDF
+
                             </a>
 
                         </div>
 
                     </div>
 
+
                 </div>
 
             </div>
+
         </section>
 
 
-        <!-- PROFESSIONAL SUMMARY -->
+        <!-- ===============================
+             SELECTED EXPERIENCE
+        =============================== -->
 
         <section class="section">
+
             <div class="container">
 
-                <div class="summary-grid">
-
-                    <div class="summary-label">
-                        Professional Summary
-                    </div>
-
-                    <div class="summary-content">
-
-                        <p>
-                            Multidisciplinary professional with experience in
-                            program leadership, education, athletics, coaching,
-                            kinesiology, recreation, research, instructional
-                            technology, and organizational operations.
-                        </p>
-
-                        <p>
-                            My career has included leadership in secondary school
-                            athletics, physical education, collegiate and youth
-                            coaching, community recreation, program development,
-                            and doctoral research.
-                        </p>
-
-                        <p>
-                            I bring a combination of direct-service experience
-                            and systems-level leadership, with particular strengths
-                            in program development, communication, operations,
-                            athlete and student development, and organizational
-                            improvement.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- SELECTED EXPERIENCE -->
-
-        <section class="section section-light">
-            <div class="container">
-
-                <h2 class="section-title">Selected Experience</h2>
+                <h2 class="section-title">
+                    Selected Experience
+                </h2>
 
                 <p class="section-intro">
-                    A brief overview of key professional roles. The complete
+                    A brief overview of key professional roles. My complete
                     employment history is available in my CV and resume.
                 </p>
 
@@ -562,7 +709,9 @@
 
                         <div class="experience-info">
 
-                            <h3>Doctoral Researcher</h3>
+                            <h3>
+                                Doctoral Researcher
+                            </h3>
 
                             <h4>
                                 University of North Carolina Greensboro
@@ -611,12 +760,14 @@
                     <div class="experience-item">
 
                         <div class="experience-date">
-                            2021 – 2023
+                            2021 – 2024
                         </div>
 
                         <div class="experience-info">
 
-                            <h3>Athletic Director</h3>
+                            <h3>
+                                Athletic Director
+                            </h3>
 
                             <h4>
                                 Richmond High School
@@ -639,12 +790,14 @@
                     <div class="experience-item">
 
                         <div class="experience-date">
-                            Multi-Year
+                            2017 – 2025
                         </div>
 
                         <div class="experience-info">
 
-                            <h3>Physical Education Teacher & Department Leader</h3>
+                            <h3>
+                                Physical Education Teacher & Department Leader
+                            </h3>
 
                             <h4>
                                 Richmond High School
@@ -666,12 +819,14 @@
                     <div class="experience-item">
 
                         <div class="experience-date">
-                            Multi-Year
+                            2011 – Present
                         </div>
 
                         <div class="experience-info">
 
-                            <h3>Collegiate & Scholastic Coach</h3>
+                            <h3>
+                                Collegiate, Scholastic & Community Coach
+                            </h3>
 
                             <h4>
                                 Tennis, Basketball & Cross Country
@@ -693,84 +848,369 @@
                 </div>
 
             </div>
+
         </section>
 
 
-        <!-- EDUCATION -->
+        <!-- ===============================
+             EDUCATION
+        =============================== -->
 
-        <section class="section">
+        <section class="section section-light">
+
             <div class="container">
 
-                <h2 class="section-title">Graduate Education</h2>
+                <h2 class="section-title">
+                    Education
+                </h2>
 
                 <p class="section-intro">
-                    Interdisciplinary preparation across kinesiology, education,
-                    technology, and business.
+                    An interdisciplinary academic path spanning kinesiology,
+                    education, technology, business, information systems,
+                    health, and the applied sciences.
                 </p>
 
-                <div class="education-list">
 
-                    <div class="education-item">
+                <!-- ===============================
+                     DEGREES
+                =============================== -->
 
-                        <div class="degree">
-                            Doctor of Education
+                <div class="education-group">
+
+                    <h3 class="education-group-title">
+                        Degrees
+                    </h3>
+
+                    <div class="education-list">
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Doctor of Education
+                            </div>
+
+                            <div class="education-detail">
+
+                                Kinesiology —
+                                University of North Carolina Greensboro
+
+                                <small>
+                                    In Progress • ABD • Expected 2027
+                                </small>
+
+                            </div>
+
                         </div>
 
-                        <div class="education-detail">
-                            Kinesiology — University of North Carolina Greensboro
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Master of Business Administration
+                            </div>
+
+                            <div class="education-detail">
+
+                                Business Analytics —
+                                Fitchburg State University
+
+                                <small>
+                                    In Progress • Expected 2026
+                                </small>
+
+                            </div>
+
                         </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Master of Science
+                            </div>
+
+                            <div class="education-detail">
+
+                                Educational Technology —
+                                California State University, East Bay
+
+                                <small>
+                                    Completed 2020
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Master of Arts
+                            </div>
+
+                            <div class="education-detail">
+
+                                Kinesiology —
+                                Saint Mary's College of California
+
+                                <small>
+                                    Completed 2015
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Bachelor of Science
+                            </div>
+
+                            <div class="education-detail">
+
+                                Kinesiology — Physical Education
+                                <br>
+                                California State University, Sacramento
+
+                                <small>
+                                    Completed 2013
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Associate of Science
+                            </div>
+
+                            <div class="education-detail">
+
+                                Computer Information Systems —
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2024
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Associate of Science
+                            </div>
+
+                            <div class="education-detail">
+
+                                Natural Science —
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2014
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Associate of Science
+                            </div>
+
+                            <div class="education-detail">
+
+                                Health Education —
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2014
+                                </small>
+
+                            </div>
+
+                        </div>
+
 
                     </div>
 
-
-                    <div class="education-item">
-
-                        <div class="degree">
-                            Master of Business Administration
-                        </div>
-
-                        <div class="education-detail">
-                            Business Analytics — Fitchburg State University
-                        </div>
-
-                    </div>
+                </div>
 
 
-                    <div class="education-item">
+                <!-- ===============================
+                     TEACHING CREDENTIAL
+                =============================== -->
 
-                        <div class="degree">
-                            Master of Science
-                        </div>
+                <div class="education-group">
 
-                        <div class="education-detail">
-                            Educational Technology — California State University,
-                            East Bay
-                        </div>
+                    <h3 class="education-group-title">
+                        Teaching Credential
+                    </h3>
 
-                    </div>
+                    <div class="education-list">
 
+                        <div class="education-item">
 
-                    <div class="education-item">
+                            <div class="degree">
+                                Single Subject Teaching Credential
+                            </div>
 
-                        <div class="degree">
-                            Master of Arts
-                        </div>
+                            <div class="education-detail">
 
-                        <div class="education-detail">
-                            Kinesiology — Saint Mary's College of California
+                                Physical Education —
+                                California State University, East Bay
+
+                                <small>
+                                    Completed 2018
+                                </small>
+
+                            </div>
+
                         </div>
 
                     </div>
 
                 </div>
 
+
+                <!-- ===============================
+                     ACADEMIC CERTIFICATES
+                =============================== -->
+
+                <div class="education-group">
+
+                    <h3 class="education-group-title">
+                        Academic Certificates
+                    </h3>
+
+                    <div class="education-list">
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                CAD & Digital Media
+                            </div>
+
+                            <div class="education-detail">
+
+                                Architecture, Interior Design & Engineering —
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2025
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Project Management
+                            </div>
+
+                            <div class="education-detail">
+
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2025
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Database Management
+                            </div>
+
+                            <div class="education-detail">
+
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2025
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Microsoft Office / Core
+                            </div>
+
+                            <div class="education-detail">
+
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2024
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="education-item">
+
+                            <div class="degree">
+                                Web Graphics
+                            </div>
+
+                            <div class="education-detail">
+
+                                Diablo Valley College
+
+                                <small>
+                                    Completed 2024
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
             </div>
+
         </section>
 
 
-        <!-- CTA -->
+        <!-- ===============================
+             CTA
+        =============================== -->
 
         <section class="cta">
+
             <div class="container">
 
                 <h2>
@@ -788,10 +1228,16 @@
                 </a>
 
             </div>
+
         </section>
+
 
     </main>
 
+
+    <!-- ===============================
+         FOOTER
+    =============================== -->
 
     <footer>
 
@@ -808,6 +1254,92 @@
         </div>
 
     </footer>
+
+
+    <!-- ===============================
+         MOBILE NAVIGATION SCRIPT
+    =============================== -->
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener('click', () => {
+
+                const isOpen = navLinks.classList.toggle('open');
+
+                menuToggle.classList.toggle(
+                    'active',
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen
+                        ? 'Close navigation menu'
+                        : 'Open navigation menu'
+                );
+
+            });
+
+
+            navLinks.querySelectorAll('a').forEach(link => {
+
+                link.addEventListener('click', () => {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                });
+
+            });
+
+
+            window.addEventListener('resize', () => {
+
+                if (window.innerWidth > 900) {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
+
 
 </body>
 

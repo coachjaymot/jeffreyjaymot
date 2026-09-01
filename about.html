@@ -11,6 +11,7 @@
         content="Learn more about Jeffrey Jaymot's background in kinesiology, education, athletics, research, coaching, and program leadership.">
 
     <style>
+
         /* ===============================
            RESET
         =============================== */
@@ -54,19 +55,6 @@
             background: #f7f7f7;
         }
 
-        .section-title {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            letter-spacing: -0.03em;
-        }
-
-        .section-intro {
-            max-width: 760px;
-            color: #60646c;
-            margin-bottom: 45px;
-            font-size: 1.05rem;
-        }
-
         /* ===============================
            NAVIGATION
         =============================== */
@@ -85,6 +73,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -109,6 +98,42 @@
         .nav-links a.active {
             color: #000;
             font-weight: 600;
+        }
+
+        /* MOBILE MENU BUTTON */
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #ffffff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #202124;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* ===============================
@@ -175,86 +200,13 @@
         }
 
         /* ===============================
-           CAREER THREAD
-        =============================== */
-
-        .thread-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-
-        .thread-card {
-            padding-top: 22px;
-            border-top: 3px solid #222;
-        }
-
-        .thread-card h3 {
-            font-size: 1.08rem;
-            margin-bottom: 10px;
-        }
-
-        .thread-card p {
-            color: #686868;
-            font-size: 0.94rem;
-        }
-
-        /* ===============================
-           PROFESSIONAL APPROACH
-        =============================== */
-
-        .approach-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .approach-card {
-            padding: 32px;
-            border: 1px solid #e3e3e3;
-            border-radius: 8px;
-            background: #fff;
-        }
-
-        .approach-number {
-            font-size: 0.78rem;
-            color: #999;
-            font-weight: 700;
-            margin-bottom: 35px;
-        }
-
-        .approach-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
-        }
-
-        .approach-card p {
-            font-size: 0.95rem;
-            color: #666;
-        }
-
-        /* ===============================
-           CURRENT DIRECTION
-        =============================== */
-
-        .direction-content {
-            max-width: 850px;
-        }
-
-        .direction-content p {
-            color: #575b60;
-            font-size: 1.08rem;
-            margin-bottom: 20px;
-        }
-
-        /* ===============================
-           CTA
+           EXPLORE / CTA
         =============================== */
 
         .cta {
             padding: 100px 0;
             background: #181818;
-            color: #fff;
+            color: #ffffff;
         }
 
         .cta h2 {
@@ -265,7 +217,7 @@
         }
 
         .cta p {
-            color: #bbb;
+            color: #bbbbbb;
             max-width: 650px;
             margin-bottom: 30px;
             font-size: 1.05rem;
@@ -287,17 +239,21 @@
         }
 
         .btn-light {
-            background: white;
+            background: #ffffff;
             color: #181818;
         }
 
+        .btn-light:hover {
+            background: #f0f0f0;
+        }
+
         .btn-outline {
-            color: white;
-            border: 1px solid #555;
+            color: #ffffff;
+            border: 1px solid #555555;
         }
 
         .btn-outline:hover {
-            border-color: #aaa;
+            border-color: #aaaaaa;
         }
 
         /* ===============================
@@ -306,7 +262,7 @@
 
         footer {
             background: #181818;
-            color: #aaa;
+            color: #aaaaaa;
             padding: 35px 0;
             border-top: 1px solid #303030;
         }
@@ -324,8 +280,41 @@
 
         @media (max-width: 900px) {
 
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                border: 1px solid #e4e4e4;
+                border-top: none;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px;
+                font-size: 0.96rem;
+            }
+
+            .nav-links a:hover {
+                background: #f7f7f7;
             }
 
             .bio-grid {
@@ -333,33 +322,44 @@
                 gap: 25px;
             }
 
-            .thread-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .approach-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 600px) {
 
+            .container {
+                width: min(1120px, 92%);
+            }
+
             .section {
-                padding: 65px 0;
+                padding: 55px 0;
             }
 
             .page-hero {
-                padding: 90px 0 70px;
+                padding: 70px 0 55px;
             }
 
-            .thread-grid {
-                grid-template-columns: 1fr;
+            .page-hero h1 {
+                font-size: clamp(2.6rem, 12vw, 4rem);
+            }
+
+            .page-hero p {
+                font-size: 1.05rem;
+            }
+
+            .bio-content p {
+                font-size: 1rem;
+            }
+
+            .cta {
+                padding: 70px 0;
             }
 
             .footer-content {
                 flex-direction: column;
             }
+
         }
+
     </style>
 </head>
 
@@ -371,23 +371,79 @@
     =============================== -->
 
     <header>
+
         <div class="container">
+
             <nav>
 
-                <a href="index.html" class="logo">Jeffrey Jaymot</a>
+                <a href="index.html" class="logo">
+                    Jeffrey Jaymot
+                </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="cv.html">CV & Resume</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="coaching.html">Coaching & Athletics</a></li>
-                    <li><a href="skills.html">Skills & Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+
+                <ul class="nav-links" id="primary-navigation">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html" class="active">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cv.html">
+                            CV & Resume
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="research.html">
+                            Research
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="coaching.html">
+                            Coaching & Athletics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills & Certifications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
 
             </nav>
+
         </div>
+
     </header>
 
 
@@ -398,11 +454,17 @@
         =============================== -->
 
         <section class="page-hero">
+
             <div class="container">
 
-                <p class="eyebrow">About</p>
+                <p class="eyebrow">
+                    About
+                </p>
 
-                <h1>A multidisciplinary career built around people, programs, and physical activity.</h1>
+                <h1>
+                    A multidisciplinary career built around people,
+                    programs, and physical activity.
+                </h1>
 
                 <p>
                     My professional path has crossed kinesiology, education,
@@ -412,6 +474,7 @@
                 </p>
 
             </div>
+
         </section>
 
 
@@ -420,6 +483,7 @@
         =============================== -->
 
         <section class="section section-light">
+
             <div class="container">
 
                 <div class="bio-grid">
@@ -427,6 +491,7 @@
                     <div class="bio-label">
                         Professional Background
                     </div>
+
 
                     <div class="bio-content">
 
@@ -469,179 +534,16 @@
                 </div>
 
             </div>
+
         </section>
 
 
         <!-- ===============================
-             CAREER THREAD
-        =============================== -->
-
-        <section class="section">
-            <div class="container">
-
-                <h2 class="section-title">The Career Thread</h2>
-
-                <p class="section-intro">
-                    Although my experience spans several fields, four themes
-                    consistently connect my work.
-                </p>
-
-                <div class="thread-grid">
-
-                    <div class="thread-card">
-                        <h3>Leadership</h3>
-                        <p>
-                            Building programs, coordinating people and resources,
-                            solving operational challenges, and creating systems
-                            that support long-term success.
-                        </p>
-                    </div>
-
-                    <div class="thread-card">
-                        <h3>Education</h3>
-                        <p>
-                            Helping people learn through teaching, coaching,
-                            curriculum development, mentorship, and applied
-                            instructional practice.
-                        </p>
-                    </div>
-
-                    <div class="thread-card">
-                        <h3>Physical Activity</h3>
-                        <p>
-                            Using sport, exercise, recreation, and movement as
-                            tools for development, health, participation, and
-                            community engagement.
-                        </p>
-                    </div>
-
-                    <div class="thread-card">
-                        <h3>Research & Analysis</h3>
-                        <p>
-                            Applying research, technology, and data to better
-                            understand programs, environments, participation,
-                            and decision-making.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ===============================
-             PROFESSIONAL APPROACH
-        =============================== -->
-
-        <section class="section section-light">
-            <div class="container">
-
-                <h2 class="section-title">Professional Approach</h2>
-
-                <p class="section-intro">
-                    I approach leadership and program development through a
-                    combination of practical experience, evidence, adaptability,
-                    and relationship building.
-                </p>
-
-                <div class="approach-grid">
-
-                    <div class="approach-card">
-
-                        <div class="approach-number">01</div>
-
-                        <h3>People First</h3>
-
-                        <p>
-                            Strong programs begin with understanding the people
-                            they serve. I value communication, mentorship,
-                            accessibility, and meaningful relationships.
-                        </p>
-
-                    </div>
-
-
-                    <div class="approach-card">
-
-                        <div class="approach-number">02</div>
-
-                        <h3>Systems Thinking</h3>
-
-                        <p>
-                            Sustainable improvement requires looking beyond
-                            individual tasks and understanding how people,
-                            policies, environments, resources, and operations
-                            interact.
-                        </p>
-
-                    </div>
-
-
-                    <div class="approach-card">
-
-                        <div class="approach-number">03</div>
-
-                        <h3>Continuous Improvement</h3>
-
-                        <p>
-                            I believe strong programs evolve through reflection,
-                            data, feedback, experimentation, and a willingness
-                            to adjust when better approaches become available.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ===============================
-             CURRENT DIRECTION
-        =============================== -->
-
-        <section class="section">
-            <div class="container">
-
-                <h2 class="section-title">Current Direction</h2>
-
-                <div class="direction-content">
-
-                    <p>
-                        My current work continues to bring together kinesiology,
-                        research, sport, recreation, education, and program
-                        leadership. I am particularly interested in how
-                        organizations and communities can create stronger,
-                        more accessible opportunities for people to participate
-                        in physical activity.
-                    </p>
-
-                    <p>
-                        Through doctoral research, community programming,
-                        coaching, and continued professional development, I am
-                        expanding my ability to work across both direct-service
-                        and organizational leadership environments.
-                    </p>
-
-                    <p>
-                        Long term, my goal is to contribute to organizations
-                        where program development, leadership, physical activity,
-                        education, and community impact intersect.
-                    </p>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- ===============================
-             CTA
+             EXPLORE
         =============================== -->
 
         <section class="cta">
+
             <div class="container">
 
                 <h2>
@@ -656,17 +558,22 @@
 
                 <div class="cta-buttons">
 
-                    <a href="cv.html" class="btn btn-light">
+                    <a
+                        href="cv.html"
+                        class="btn btn-light">
                         CV & Resume
                     </a>
 
-                    <a href="research.html" class="btn btn-outline">
+                    <a
+                        href="research.html"
+                        class="btn btn-outline">
                         Research
                     </a>
 
                 </div>
 
             </div>
+
         </section>
 
     </main>
@@ -677,6 +584,7 @@
     =============================== -->
 
     <footer>
+
         <div class="container footer-content">
 
             <div>
@@ -688,7 +596,90 @@
             </div>
 
         </div>
+
     </footer>
+
+
+    <!-- ===============================
+         MOBILE NAVIGATION
+    =============================== -->
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener('click', () => {
+
+                const isOpen = navLinks.classList.toggle('open');
+
+                menuToggle.classList.toggle('active', isOpen);
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen
+                        ? 'Close navigation menu'
+                        : 'Open navigation menu'
+                );
+
+            });
+
+
+            navLinks.querySelectorAll('a').forEach(link => {
+
+                link.addEventListener('click', () => {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                });
+
+            });
+
+
+            window.addEventListener('resize', () => {
+
+                if (window.innerWidth > 900) {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
 
 </body>
 

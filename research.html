@@ -201,8 +201,15 @@
         }
 
         /* ===============================
-           DISSERTATION
+           DOCTORAL RESEARCH
         =============================== */
+
+        .research-feature-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 60px;
+            align-items: center;
+        }
 
         .research-feature {
             max-width: 940px;
@@ -221,7 +228,16 @@
             font-size: clamp(2rem, 4vw, 3rem);
             line-height: 1.15;
             letter-spacing: -0.035em;
-            margin-bottom: 25px;
+            margin-bottom: 18px;
+        }
+
+        .research-subheader {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #3f4348;
+            font-weight: 600;
+            max-width: 760px;
+            margin-bottom: 24px;
         }
 
         .research-feature p {
@@ -233,6 +249,18 @@
 
         .research-feature p:last-child {
             margin-bottom: 0;
+        }
+
+        .research-map-wrap {
+            width: 100%;
+        }
+
+        .research-map {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            border: 1px solid #dedede;
         }
 
         /* ===============================
@@ -363,6 +391,15 @@
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
+
+            .research-feature-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .research-map-wrap {
+                max-width: 700px;
+            }
         }
 
         @media (max-width: 600px) {
@@ -373,6 +410,14 @@
 
             .page-hero {
                 padding: 90px 0 70px;
+            }
+
+            .research-feature-grid {
+                gap: 30px;
+            }
+
+            .research-subheader {
+                font-size: 1.1rem;
             }
 
             .footer-content {
@@ -546,36 +591,60 @@
 
 
         <!-- ===============================
-             DISSERTATION
+             DOCTORAL RESEARCH
         =============================== -->
 
         <section class="section">
 
             <div class="container">
 
-                <div class="research-feature">
+                <div class="research-feature-grid">
 
-                    <div class="research-kicker">
-                        Doctoral Research
+
+                    <!-- TEXT -->
+
+                    <div class="research-feature">
+
+                        <div class="research-kicker">
+                            Doctoral Research
+                        </div>
+
+                        <h2>
+                            Factors Influencing Use of Physical Spaces In Formerly Redlined Neighborhoods
+                        </h2>
+
+                        <p class="research-subheader">
+    Examining the social, environmental, and place-based factors that influence how residents experience and use physical activity spaces.
+                        </p>
+
+                        <p>
+                            My doctoral research explores how historical patterns of
+                            neighborhood disinvestment and exclusion may continue to
+                            influence physical activity environments and experiences
+                            within communities today.
+                        </p>
+
+                        <p>
+                            The study focuses not only on spatial access to physical
+                            activity resources, but also on what influences whether
+                            residents actually view those spaces as usable,
+                            accessible, welcoming, safe, and relevant to their lives.
+                        </p>
+
                     </div>
 
-                    <h2>
-                        Redlining & Physical Activity Deserts
-                    </h2>
 
-                    <p>
-                        My doctoral research explores how historical patterns of
-                        neighborhood disinvestment and exclusion may continue to
-                        influence physical activity environments and experiences
-                        within communities today.
-                    </p>
+                    <!-- REDLINING MAP -->
 
-                    <p>
-                        The study focuses not only on spatial access to physical
-                        activity resources, but also on what influences whether
-                        residents actually view those spaces as usable,
-                        accessible, welcoming, safe, and relevant to their lives.
-                    </p>
+                    <div class="research-map-wrap">
+
+                        <img
+                            src="redlining-map.jpg"
+                            alt="Historic redlining map related to Jeffrey Jaymot's doctoral research"
+                            class="research-map">
+
+                    </div>
+
 
                 </div>
 

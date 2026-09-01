@@ -55,22 +55,10 @@
             background: #f7f7f7;
         }
 
-        .section-dark {
-            background: #181818;
-            color: white;
-        }
-
         .section-title {
             font-size: 2.2rem;
             margin-bottom: 15px;
             letter-spacing: -0.03em;
-        }
-
-        .section-intro {
-            max-width: 780px;
-            color: #60646c;
-            margin-bottom: 45px;
-            font-size: 1.05rem;
         }
 
         /* ===============================
@@ -208,6 +196,10 @@
             margin-bottom: 22px;
         }
 
+        .overview-content p:last-child {
+            margin-bottom: 0;
+        }
+
         /* ===============================
            DISSERTATION
         =============================== */
@@ -239,89 +231,8 @@
             max-width: 840px;
         }
 
-        /* ===============================
-           RESEARCH QUESTIONS / THEMES
-        =============================== */
-
-        .theme-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .theme-card {
-            border-top: 3px solid #222;
-            padding-top: 20px;
-        }
-
-        .theme-card h3 {
-            font-size: 1.05rem;
-            margin-bottom: 10px;
-        }
-
-        .theme-card p {
-            color: #666;
-            font-size: 0.94rem;
-        }
-
-        /* ===============================
-           METHODS
-        =============================== */
-
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .method-card {
-            border: 1px solid #e2e2e2;
-            border-radius: 8px;
-            padding: 30px;
-            background: #fff;
-        }
-
-        .method-number {
-            font-size: 0.78rem;
-            font-weight: 700;
-            color: #999;
-            margin-bottom: 35px;
-        }
-
-        .method-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .method-card p {
-            color: #666;
-            font-size: 0.93rem;
-        }
-
-        /* ===============================
-           FRAMEWORKS
-        =============================== */
-
-        .framework-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 28px;
-        }
-
-        .framework-card {
-            padding: 32px;
-            border: 1px solid #e4e4e4;
-            border-radius: 8px;
-        }
-
-        .framework-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-
-        .framework-card p {
-            color: #666;
-            font-size: 0.95rem;
+        .research-feature p:last-child {
+            margin-bottom: 0;
         }
 
         /* ===============================
@@ -346,24 +257,6 @@
 
         .impact-list li {
             margin-bottom: 12px;
-        }
-
-        /* ===============================
-           RESEARCH INTERESTS
-        =============================== */
-
-        .interest-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .interest-tag {
-            border: 1px solid #d7d7d7;
-            border-radius: 30px;
-            padding: 10px 16px;
-            font-size: 0.9rem;
-            background: #fff;
         }
 
         /* ===============================
@@ -470,15 +363,6 @@
                 grid-template-columns: 1fr;
                 gap: 25px;
             }
-
-            .theme-grid,
-            .methods-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .framework-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 600px) {
@@ -489,11 +373,6 @@
 
             .page-hero {
                 padding: 90px 0 70px;
-            }
-
-            .theme-grid,
-            .methods-grid {
-                grid-template-columns: 1fr;
             }
 
             .footer-content {
@@ -608,8 +487,9 @@
                 <p>
                     My research examines how social, environmental, historical,
                     and structural conditions influence opportunities to engage
-                    with physical activity spaces in historically marginalized communities and how communities experience these
-                    spaces designed to support movement, recreation, and health.
+                    with physical activity spaces in historically marginalized
+                    communities and how communities experience these spaces
+                    designed to support movement, recreation, and health.
                 </p>
 
             </div>
@@ -634,7 +514,8 @@
                     <div class="overview-content">
 
                         <p>
-                            My work is situated at the intersection of kinesiology and public health with a focus on equity.
+                            My work is situated at the intersection of kinesiology
+                            and public health with a focus on equity.
                         </p>
 
                         <p>
@@ -695,13 +576,13 @@
                         residents actually view those spaces as usable,
                         accessible, welcoming, safe, and relevant to their lives.
                     </p>
-                    </p>
 
                 </div>
 
             </div>
 
         </section>
+
 
         <!-- ===============================
              WHY IT MATTERS

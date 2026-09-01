@@ -115,6 +115,40 @@
             color: #000;
         }
 
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #fff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #202124;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
         /* ===============================
            HERO
         =============================== */
@@ -426,53 +460,6 @@
         }
 
         /* ===============================
-           PROFESSIONAL AREAS
-        =============================== */
-
-        .areas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .area {
-            border: 1px solid #d7d7d7;
-            padding: 10px 16px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            background: white;
-        }
-
-        /* ===============================
-           CTA
-        =============================== */
-
-        .cta {
-            padding: 100px 0;
-            background: #181818;
-            color: #fff;
-        }
-
-        .cta h2 {
-            font-size: clamp(2.3rem, 5vw, 3.8rem);
-            letter-spacing: -0.045em;
-            max-width: 800px;
-            margin-bottom: 20px;
-        }
-
-        .cta p {
-            color: #bbb;
-            max-width: 650px;
-            margin-bottom: 30px;
-            font-size: 1.05rem;
-        }
-
-        .cta .btn {
-            background: white;
-            color: #181818;
-        }
-
-        /* ===============================
            FOOTER
         =============================== */
 
@@ -496,8 +483,45 @@
 
         @media (max-width: 900px) {
 
+            nav {
+                position: relative;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: #fff;
+                border: 1px solid #e4e4e4;
+                border-top: none;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px;
+                font-size: 0.96rem;
+            }
+
+            .nav-links a:hover {
+                background: #f7f7f7;
             }
 
             .hero-grid {
@@ -522,29 +546,132 @@
             }
 
             .highlights-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 32px 24px;
             }
         }
 
         @media (max-width: 600px) {
 
+            .container {
+                width: min(1120px, 92%);
+            }
+
             .section {
-                padding: 65px 0;
+                padding: 52px 0;
+            }
+
+            .section-title {
+                font-size: 1.85rem;
+            }
+
+            .section-intro {
+                margin-bottom: 30px;
+                font-size: 0.98rem;
             }
 
             .hero {
                 min-height: auto;
-                padding: 80px 0 70px;
+                padding: 55px 0 50px;
             }
 
-            .snapshot-grid,
+            .hero-grid {
+                gap: 30px;
+            }
+
+            .hero h1 {
+                font-size: clamp(2.65rem, 14vw, 4rem);
+            }
+
+            .hero-description {
+                font-size: 1.02rem;
+                margin-bottom: 28px;
+            }
+
+            .hero-photo {
+                max-width: 240px;
+            }
+
+            .snapshot-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 22px 18px;
+            }
+
+            .snapshot-card {
+                padding-top: 14px;
+            }
+
+            .snapshot-card h3 {
+                font-size: 0.98rem;
+            }
+
+            .snapshot-card p {
+                font-size: 0.86rem;
+                line-height: 1.5;
+            }
+
+            .current-card {
+                padding: 24px;
+            }
+
+            .career-summary {
+                margin-bottom: 30px;
+            }
+
+            .career-summary-secondary {
+                margin-top: 55px;
+            }
+
+            .career-summary h3 {
+                font-size: 1.25rem;
+            }
+
+            .career-summary p {
+                font-size: 0.95rem;
+            }
+
             .highlights-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 28px 18px;
+            }
+
+            .highlight {
+                padding-top: 16px;
+            }
+
+            .highlight-value {
+                font-size: 2.15rem;
+                margin-bottom: 9px;
+            }
+
+            .highlight-value.long-value {
+                font-size: 1.5rem;
+                letter-spacing: -0.04em;
+            }
+
+            .highlight-title {
+                font-size: 0.92rem;
+                line-height: 1.25;
+            }
+
+            .highlight-label {
+                font-size: 0.82rem;
+                line-height: 1.45;
+            }
+
+            .recognition-box {
+                margin-top: 38px;
+                padding-top: 24px;
+            }
+
+            .achievement-list li {
+                padding: 12px 0;
             }
 
             .education-item {
                 grid-template-columns: 1fr;
                 gap: 5px;
+                padding: 18px 0;
             }
 
             .footer-content {
@@ -554,7 +681,6 @@
 
     </style>
 </head>
-
 
 <body>
 
@@ -572,7 +698,17 @@
                     Jeffrey Jaymot
                 </a>
 
-                <ul class="nav-links">
+                <button class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="cv.html">CV & Resume</a></li>
@@ -771,8 +907,6 @@
                 <div class="current-grid">
 
 
-                    <!-- RESEARCH -->
-
                     <div class="current-card">
 
                         <p class="current-status">
@@ -795,8 +929,6 @@
 
                     </div>
 
-
-                    <!-- COACHING -->
 
                     <div class="current-card">
 
@@ -821,8 +953,6 @@
 
                     </div>
 
-
-                    <!-- SPORTS PROGRAMMING -->
 
                     <div class="current-card">
 
@@ -872,9 +1002,7 @@
                 </p>
 
 
-                <!-- ===============================
-                     RICHMOND HIGH SCHOOL
-                =============================== -->
+                <!-- RICHMOND HIGH SCHOOL -->
 
                 <div class="career-summary">
 
@@ -1011,8 +1139,6 @@
                 </div>
 
 
-                <!-- RICHMOND RECOGNITION -->
-
                 <div class="recognition-box">
 
                     <h3>
@@ -1053,9 +1179,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     DIABLO VALLEY COLLEGE
-                =============================== -->
+                <!-- DIABLO VALLEY COLLEGE -->
 
                 <div class="career-summary career-summary-secondary">
 
@@ -1134,8 +1258,6 @@
                 </div>
 
 
-                <!-- DVC RECOGNITION -->
-
                 <div class="recognition-box">
 
                     <h3>
@@ -1164,9 +1286,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     COMMUNITY PROGRAMS
-                =============================== -->
+                <!-- COMMUNITY PROGRAMS -->
 
                 <div class="career-summary career-summary-secondary">
 
@@ -1341,73 +1461,6 @@
 
         </section>
 
-
-        <!-- ===============================
-             PROFESSIONAL AREAS
-        =============================== -->
-
-        <section class="section section-light">
-
-            <div class="container">
-
-                <h2 class="section-title">
-                    Professional Areas
-                </h2>
-
-                <p class="section-intro">
-                    Areas represented throughout my professional,
-                    academic, coaching, and leadership experience.
-                </p>
-
-                <div class="areas">
-
-                    <span class="area">Program Development</span>
-                    <span class="area">Athletic Leadership</span>
-                    <span class="area">Kinesiology</span>
-                    <span class="area">Sport Management</span>
-                    <span class="area">Community Recreation</span>
-                    <span class="area">Athletic Administration</span>
-                    <span class="area">Research</span>
-                    <span class="area">Education</span>
-                    <span class="area">Coaching</span>
-                    <span class="area">Player Development</span>
-                    <span class="area">Instructional Technology</span>
-                    <span class="area">Business Analytics</span>
-                    <span class="area">Community Physical Activity</span>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ===============================
-             CTA
-        =============================== -->
-
-        <section class="cta">
-
-            <div class="container">
-
-                <h2>
-                    Building programs. Developing people. Strengthening organizations.
-                </h2>
-
-                <p>
-                    Explore my professional background, research, athletic
-                    leadership, coaching experience, education, and
-                    qualifications throughout this portfolio.
-                </p>
-
-                <a href="about.html" class="btn">
-                    Learn More About Me
-                </a>
-
-            </div>
-
-        </section>
-
     </main>
 
 
@@ -1430,6 +1483,84 @@
         </div>
 
     </footer>
+
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener('click', () => {
+
+                const isOpen = navLinks.classList.toggle('open');
+
+                menuToggle.classList.toggle('active', isOpen);
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen
+                        ? 'Close navigation menu'
+                        : 'Open navigation menu'
+                );
+
+            });
+
+
+            navLinks.querySelectorAll('a').forEach(link => {
+
+                link.addEventListener('click', () => {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                });
+
+            });
+
+
+            window.addEventListener('resize', () => {
+
+                if (window.innerWidth > 900) {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
 
 </body>
 

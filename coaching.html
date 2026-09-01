@@ -365,35 +365,50 @@
            PLAYING CAREER PHOTOS
         =============================== */
 
+        /* Diablo Valley College photo row */
+
         .playing-photo-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 10px;
             max-width: 1000px;
             margin: 35px 0 45px;
         }
 
         .playing-photo {
             width: 100%;
-            aspect-ratio: 4 / 3;
+            max-height: 280px;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #e1e1e1;
             background: #f2f2f2;
         }
 
+        /* Pinole Valley High School photo */
+
         .high-school-photo-wrap {
-            max-width: 760px;
+            display: flex;
+            justify-content: center;
             margin: 35px 0 45px;
         }
 
         .high-school-photo {
-            width: 100%;
-            aspect-ratio: 16 / 9;
+            width: 320px;
+            max-width: 90%;
+            height: auto;
             object-fit: cover;
             border-radius: 8px;
             border: 1px solid #e1e1e1;
             background: #f2f2f2;
+        }
+
+        @media (min-width: 768px) {
+
+            .high-school-photo {
+                width: 380px;
+            }
+
         }
 
         /* ===============================
@@ -469,6 +484,7 @@
             .program-grid {
                 grid-template-columns: 1fr;
             }
+
         }
 
         @media (max-width: 600px) {
@@ -491,9 +507,15 @@
             }
 
             .playing-photo-grid {
-                grid-template-columns: 1fr;
-                gap: 14px;
+                flex-direction: column;
+                gap: 10px;
                 margin: 28px 0 38px;
+            }
+
+            .playing-photo {
+                width: 100%;
+                height: auto;
+                max-height: none;
             }
 
             .high-school-photo-wrap {
@@ -503,6 +525,7 @@
             .footer-content {
                 flex-direction: column;
             }
+
         }
 
     </style>
@@ -512,7 +535,9 @@
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- ===============================
+         NAVIGATION
+    =============================== -->
 
     <header>
 
@@ -540,19 +565,27 @@
                 <ul class="nav-links" id="primary-navigation">
 
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="index.html">
+                            Home
+                        </a>
                     </li>
 
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="about.html">
+                            About
+                        </a>
                     </li>
 
                     <li>
-                        <a href="cv.html">CV & Resume</a>
+                        <a href="cv.html">
+                            CV & Resume
+                        </a>
                     </li>
 
                     <li>
-                        <a href="research.html">Research</a>
+                        <a href="research.html">
+                            Research
+                        </a>
                     </li>
 
                     <li>
@@ -568,7 +601,9 @@
                     </li>
 
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="contact.html">
+                            Contact
+                        </a>
                     </li>
 
                 </ul>
@@ -2003,22 +2038,22 @@
                 </div>
 
 
-                <!-- THREE COLLEGIATE PHOTO SLOTS -->
+                <!-- THREE COLLEGIATE PHOTOS -->
 
                 <div class="playing-photo-grid">
 
                     <img
-                        src="DVCTEN11.jpeg"
+                        src="playing-career-1.jpg"
                         alt="Jeffrey Jaymot collegiate tennis playing career"
                         class="playing-photo">
 
                     <img
-                        src="ojaiwin.JPEG"
+                        src="playing-career-2.jpg"
                         alt="Jeffrey Jaymot competing in collegiate tennis"
                         class="playing-photo">
 
                     <img
-                        src="lastmatch.JPEG"
+                        src="playing-career-3.jpg"
                         alt="Jeffrey Jaymot Diablo Valley College tennis"
                         class="playing-photo">
 
@@ -2201,7 +2236,7 @@
                 <div class="high-school-photo-wrap">
 
                     <img
-                        src="PVBBALL.jpeg"
+                        src="high-school-athletics.jpg"
                         alt="Jeffrey Jaymot high school athletics at Pinole Valley High School"
                         class="high-school-photo">
 

@@ -12,10 +12,6 @@
 
     <style>
 
-        /* ===============================
-           RESET
-        =============================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -37,10 +33,6 @@
             text-decoration: none;
             color: inherit;
         }
-
-        /* ===============================
-           GLOBAL
-        =============================== */
 
         .container {
             width: min(1120px, 90%);
@@ -86,6 +78,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -106,8 +99,44 @@
             transition: color 0.2s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: #000;
+            font-weight: 600;
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            border: 1px solid #d8d8d8;
+            border-radius: 6px;
+            background: #ffffff;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: #202124;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
         /* ===============================
@@ -167,30 +196,6 @@
         .snapshot-card p {
             color: #666;
             font-size: 0.93rem;
-        }
-
-        /* ===============================
-           JUMP NAVIGATION
-        =============================== */
-
-        .jump-nav {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 45px;
-        }
-
-        .jump-nav a {
-            border: 1px solid #d5d5d5;
-            border-radius: 30px;
-            padding: 9px 15px;
-            font-size: 0.86rem;
-            background: white;
-            transition: all 0.2s ease;
-        }
-
-        .jump-nav a:hover {
-            border-color: #777;
         }
 
         /* ===============================
@@ -302,7 +307,7 @@
         }
 
         /* ===============================
-           AD RECORD
+           ATHLETIC ADMINISTRATION
         =============================== */
 
         .program-grid {
@@ -357,62 +362,38 @@
         }
 
         /* ===============================
-           PHILOSOPHY
+           PLAYING CAREER PHOTOS
         =============================== */
 
-        .philosophy-grid {
+        .playing-photo-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 35px;
+            gap: 18px;
+            max-width: 1000px;
+            margin: 35px 0 45px;
         }
 
-        .philosophy-item {
-            border-top: 3px solid #222;
-            padding-top: 20px;
+        .playing-photo {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e1e1e1;
+            background: #f2f2f2;
         }
 
-        .philosophy-item h3 {
-            font-size: 1.05rem;
-            margin-bottom: 8px;
+        .high-school-photo-wrap {
+            max-width: 760px;
+            margin: 35px 0 45px;
         }
 
-        .philosophy-item p {
-            color: #666;
-            font-size: 0.93rem;
-        }
-
-        /* ===============================
-           CTA
-        =============================== */
-
-        .cta {
-            padding: 100px 0;
-            background: #181818;
-            color: white;
-        }
-
-        .cta h2 {
-            font-size: clamp(2.2rem, 5vw, 3.6rem);
-            letter-spacing: -0.045em;
-            max-width: 820px;
-            margin-bottom: 18px;
-        }
-
-        .cta p {
-            max-width: 650px;
-            color: #bbb;
-            margin-bottom: 28px;
-            font-size: 1.05rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: white;
-            color: #181818;
-            padding: 13px 22px;
-            border-radius: 5px;
-            font-weight: 600;
-            font-size: 0.93rem;
+        .high-school-photo {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #e1e1e1;
+            background: #f2f2f2;
         }
 
         /* ===============================
@@ -439,8 +420,41 @@
 
         @media (max-width: 900px) {
 
+            .menu-toggle {
+                display: flex;
+            }
+
             .nav-links {
                 display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: #ffffff;
+                border: 1px solid #e4e4e4;
+                border-top: none;
+                box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+                padding: 8px 0;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                width: 100%;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 18px;
+                font-size: 0.96rem;
+            }
+
+            .nav-links a:hover {
+                background: #f7f7f7;
             }
 
             .snapshot-grid {
@@ -453,10 +467,6 @@
             }
 
             .program-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .philosophy-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -480,20 +490,29 @@
                 gap: 4px;
             }
 
+            .playing-photo-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin: 28px 0 38px;
+            }
+
+            .high-school-photo-wrap {
+                margin: 28px 0 38px;
+            }
+
             .footer-content {
                 flex-direction: column;
             }
         }
 
     </style>
+
 </head>
 
 
 <body>
 
-    <!-- ===============================
-         NAVIGATION
-    =============================== -->
+    <!-- NAVIGATION -->
 
     <header>
 
@@ -505,14 +524,53 @@
                     Jeffrey Jaymot
                 </a>
 
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="cv.html">CV & Resume</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="coaching.html">Coaching & Athletics</a></li>
-                    <li><a href="skills.html">Skills & Certifications</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="primary-navigation">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+                <ul class="nav-links" id="primary-navigation">
+
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+
+                    <li>
+                        <a href="cv.html">CV & Resume</a>
+                    </li>
+
+                    <li>
+                        <a href="research.html">Research</a>
+                    </li>
+
+                    <li>
+                        <a href="coaching.html" class="active">
+                            Coaching & Athletics
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="skills.html">
+                            Skills & Certifications
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+
                 </ul>
 
             </nav>
@@ -585,8 +643,8 @@
                         </h3>
 
                         <p>
-                            Varsity basketball, varsity tennis, collegiate
-                            tennis, cross country, community recreation,
+                            Varsity basketball, varsity tennis, varsity cross country,
+                            collegiate tennis, community recreation,
                             and USTA Junior Team Tennis.
                         </p>
 
@@ -637,19 +695,6 @@
 
                     </div>
 
-                </div>
-
-
-                <div class="jump-nav">
-
-                    <a href="#girls-basketball">Girls' Basketball</a>
-                    <a href="#boys-basketball">Boys' Basketball</a>
-                    <a href="#girls-tennis">Girls' Tennis</a>
-                    <a href="#boys-tennis">Boys' Tennis</a>
-                    <a href="#college-coaching">College Tennis</a>
-                    <a href="#athletic-director">Athletic Director</a>
-                    <a href="#community">Community Programs</a>
-                    <a href="#playing-career">Playing Career</a>
 
                 </div>
 
@@ -676,9 +721,7 @@
                 </p>
 
 
-                <!-- ===============================
-                     GIRLS BASKETBALL
-                =============================== -->
+                <!-- GIRLS BASKETBALL -->
 
                 <div class="record-block" id="girls-basketball">
 
@@ -711,7 +754,6 @@
 
 
                     <ul class="record-list">
-
 
                         <li>
 
@@ -790,31 +832,36 @@
                             </div>
 
                         </li>
-<li>
 
-    <div class="record-year">
-        2021
-    </div>
 
-    <div class="record-content">
+                        <li>
 
-        <strong>
-            A Season Lost to the Pandemic
-        </strong>
+                            <div class="record-year">
+                                2021
+                            </div>
 
-        <span>
-            Coming off the program's first NCS appearance since 2006–07,
-            a large returning senior class was robbed of the opportunity
-            to fully pursue what had the potential to be a special season.
-            COVID-19 disruptions resulted in a partial schedule with no
-            official league championship or postseason competition,
-            though Richmond finished first among the TCAL teams that
-            participated.
-        </span>
+                            <div class="record-content">
 
-    </div>
+                                <strong>
+                                    A Season Lost to the Pandemic
+                                </strong>
 
-</li>
+                                <span>
+                                    Coming off the program's first NCS appearance
+                                    since 2006–07, a large returning senior class
+                                    was robbed of the opportunity to fully pursue
+                                    what had the potential to be a special season.
+                                    COVID-19 disruptions resulted in a partial
+                                    schedule with no official league championship
+                                    or postseason competition, though Richmond
+                                    finished first among the TCAL teams that
+                                    participated.
+                                </span>
+
+                            </div>
+
+                        </li>
+
 
                         <li>
 
@@ -859,9 +906,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     BOYS BASKETBALL
-                =============================== -->
+                <!-- BOYS BASKETBALL -->
 
                 <div class="record-block" id="boys-basketball">
 
@@ -919,9 +964,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     GIRLS TENNIS
-                =============================== -->
+                <!-- GIRLS TENNIS -->
 
                 <div class="record-block" id="girls-tennis">
 
@@ -954,7 +997,6 @@
 
 
                     <ul class="record-list">
-
 
                         <li>
 
@@ -1107,9 +1149,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     BOYS TENNIS
-                =============================== -->
+                <!-- BOYS TENNIS -->
 
                 <div class="record-block" id="boys-tennis">
 
@@ -1142,7 +1182,6 @@
 
 
                     <ul class="record-list">
-
 
                         <li>
 
@@ -1278,9 +1317,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     CROSS COUNTRY
-                =============================== -->
+                <!-- CROSS COUNTRY -->
 
                 <div class="record-block">
 
@@ -1313,9 +1350,7 @@
                 </div>
 
 
-                <!-- ===============================
-                     EARLIER COACHING
-                =============================== -->
+                <!-- EARLIER COACHING -->
 
                 <div class="record-block">
 
@@ -1374,7 +1409,7 @@
                             <div class="record-content">
 
                                 <strong>
-                                    7th Grade Boys' Basketball Assistant Coach
+                                    7th & 8th Grade Boys' Basketball Assistant Coach
                                 </strong>
 
                                 <span>
@@ -1441,7 +1476,6 @@
 
 
                 <ul class="record-list">
-
 
                     <li>
 
@@ -1559,7 +1593,7 @@
 
 
         <!-- ===============================
-             ATHLETIC DIRECTOR
+             ATHLETIC ADMINISTRATION
         =============================== -->
 
         <section class="section" id="athletic-director">
@@ -1589,14 +1623,39 @@
                         </h3>
 
                         <ul>
-                            <li>TCAL Regular-Season Champions — 2022, 2023</li>
-                            <li>TCAL League Playoff Champions — 2022</li>
-                            <li>NCS Division II Runner-Up — 2022, 2023</li>
-                            <li>NCS No. 2 Seed — 2022</li>
-                            <li>NCS No. 3 Seed — 2023</li>
-                            <li>CIF State Regional Quarterfinalist — 2022, 2023</li>
-                            <li>CIF State Regional No. 2 Seed — 2022</li>
-                            <li>CIF State Regional No. 8 Seed — 2023</li>
+
+                            <li>
+                                TCAL Regular-Season Champions — 2022, 2023
+                            </li>
+
+                            <li>
+                                TCAL League Playoff Champions — 2022
+                            </li>
+
+                            <li>
+                                NCS Division II Runner-Up — 2022, 2023
+                            </li>
+
+                            <li>
+                                NCS No. 2 Seed — 2022
+                            </li>
+
+                            <li>
+                                NCS No. 3 Seed — 2023
+                            </li>
+
+                            <li>
+                                CIF State Regional Quarterfinalist — 2022, 2023
+                            </li>
+
+                            <li>
+                                CIF State Regional No. 2 Seed — 2022
+                            </li>
+
+                            <li>
+                                CIF State Regional No. 8 Seed — 2023
+                            </li>
+
                         </ul>
 
                     </div>
@@ -1609,9 +1668,19 @@
                         </h3>
 
                         <ul>
-                            <li>TCAL Regular-Season Champions — 2022</li>
-                            <li>TCAL League Playoff Champions — 2022</li>
-                            <li>NCS Participant — No. 16 Seed — 2022</li>
+
+                            <li>
+                                TCAL Regular-Season Champions — 2022
+                            </li>
+
+                            <li>
+                                TCAL League Playoff Champions — 2022
+                            </li>
+
+                            <li>
+                                NCS Participant — No. 16 Seed — 2022
+                            </li>
+
                         </ul>
 
                     </div>
@@ -1624,7 +1693,11 @@
                         </h3>
 
                         <ul>
-                            <li>NCS Participant — No. 15 Seed — 2023</li>
+
+                            <li>
+                                NCS Participant — No. 15 Seed — 2023
+                            </li>
+
                         </ul>
 
                     </div>
@@ -1637,8 +1710,15 @@
                         </h3>
 
                         <ul>
-                            <li>NCS Badminton Doubles Participants — 2022, 2023</li>
-                            <li>NCS Wrestling Participant — 220 lb. Weight Class — 2022</li>
+
+                            <li>
+                                NCS Badminton Doubles Participants — 2022, 2023
+                            </li>
+
+                            <li>
+                                NCS Wrestling Participant — 220 lb. Weight Class — 2022
+                            </li>
+
                         </ul>
 
                     </div>
@@ -1668,224 +1748,218 @@
         </section>
 
 
- <!-- ===============================
-     COMMUNITY SPORT PROGRAMS
-=============================== -->
-
-<section class="section section-light" id="community">
-
-    <div class="container">
-
-        <h2 class="section-title">
-            Community Sport Programming
-        </h2>
-
-        <p class="section-intro">
-            Community-based programming has been a recurring part of my
-            coaching career, creating additional opportunities for youth
-            athletes outside traditional school seasons through tennis,
-            Junior Team Tennis, and independently organized AAU basketball.
-        </p>
-
-
         <!-- ===============================
-             COMMUNITY TENNIS
+             COMMUNITY SPORT PROGRAMMING
         =============================== -->
 
-        <div class="record-header">
+        <section class="section section-light" id="community">
 
-            <div>
+            <div class="container">
 
-                <p class="record-label">
-                    Current Programming
+                <h2 class="section-title">
+                    Community Sport Programming
+                </h2>
+
+                <p class="section-intro">
+                    Community-based programming has been a recurring part of my
+                    coaching career, creating additional opportunities for youth
+                    athletes outside traditional school seasons through tennis,
+                    Junior Team Tennis, and independently organized AAU basketball.
                 </p>
 
-                <h3>
-                    Community Tennis & Junior Team Tennis
-                </h3>
+
+                <!-- COMMUNITY TENNIS -->
+
+                <div class="record-header">
+
+                    <div>
+
+                        <p class="record-label">
+                            Current Programming
+                        </p>
+
+                        <h3>
+                            Community Tennis & Junior Team Tennis
+                        </h3>
+
+                    </div>
+
+                    <p class="record-summary">
+                        My current community programming centers on youth and adult
+                        tennis instruction, competitive team development, and USTA
+                        Junior Team Tennis. What began as a single Junior Team Tennis
+                        team has developed into a broader community tennis program
+                        with multiple teams under my coordination.
+                    </p>
+
+                </div>
+
+
+                <ul class="record-list">
+
+                    <li>
+
+                        <div class="record-year">
+                            Current
+                        </div>
+
+                        <div class="record-content">
+
+                            <strong>
+                                Canyon Trail Tennis
+                            </strong>
+
+                            <span>
+                                Community-based tennis programming providing youth
+                                and adult instruction, player development, match play,
+                                and competitive opportunities.
+                            </span>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <div class="record-year">
+                            Current
+                        </div>
+
+                        <div class="record-content">
+
+                            <strong>
+                                Junior Team Tennis — 1 Team → 3 Teams
+                            </strong>
+
+                            <span>
+                                Started the original Crouching Tiger Tennis Junior
+                                Team Tennis program and transitioned it into Canyon
+                                Trail Tennis, growing from one team to three teams
+                                under my coordination.
+                            </span>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <div class="record-year">
+                            2025
+                        </div>
+
+                        <div class="record-content">
+
+                            <strong>
+                                USTA East Bay/Tri-Valley 10U Orange Ball Champions
+                            </strong>
+
+                            <span>
+                                Coached the Junior Team Tennis team to the
+                                East Bay/Tri-Valley championship and advancement
+                                to sectional competition.
+                            </span>
+
+                        </div>
+
+                    </li>
+
+                </ul>
+
+
+                <!-- COMMUNITY AAU BASKETBALL -->
+
+                <div class="record-header" style="margin-top: 75px;">
+
+                    <div>
+
+                        <p class="record-label">
+                            2018–2023
+                        </p>
+
+                        <h3>
+                            Community AAU Basketball
+                        </h3>
+
+                    </div>
+
+                    <p class="record-summary">
+                        Before expanding my community programming into tennis,
+                        I developed independently organized AAU basketball programs
+                        that operated alongside and complemented the high school
+                        programs I was coaching. These programs provided additional
+                        off-season instruction, competition, and player development
+                        for local youth, including athletes who otherwise may not
+                        have had access to organized club basketball.
+                    </p>
+
+                </div>
+
+
+                <ul class="record-list">
+
+                    <li>
+
+                        <div class="record-year">
+                            2022–2023
+                        </div>
+
+                        <div class="record-content">
+
+                            <strong>
+                                West COCO Athletics
+                            </strong>
+
+                            <span>
+                                My community basketball programming began with
+                                Richmond Tenacity, an independently organized AAU
+                                program created to provide additional off-season
+                                training, competition, and player development
+                                alongside the high school programs I was coaching.
+                                After programming was disrupted by the COVID-19
+                                pandemic, the concept returned and was rebranded as
+                                West CoCo Athletics, continuing the same broader
+                                mission of expanding access to organized basketball
+                                opportunities for local youth.
+                            </span>
+
+                        </div>
+
+                    </li>
+
+
+                    <li>
+
+                        <div class="record-year">
+                            2018–2021
+                        </div>
+
+                        <div class="record-content">
+
+                            <strong>
+                                Richmond Tenacity
+                            </strong>
+
+                            <span>
+                                Founded and operated a community-based AAU basketball
+                                program that complemented my high school coaching work
+                                by providing additional off-season training, team
+                                competition, and development opportunities for youth
+                                who may not otherwise have had access to club basketball.
+                            </span>
+
+                        </div>
+
+                    </li>
+
+                </ul>
 
             </div>
 
-            <p class="record-summary">
-                My current community programming centers on youth and adult
-                tennis instruction, competitive team development, and USTA
-                Junior Team Tennis. What began as a single Junior Team Tennis
-                team has developed into a broader community tennis program
-                with multiple teams under my coordination.
-            </p>
+        </section>
 
-        </div>
-
-
-        <ul class="record-list">
-
-
-            <li>
-
-                <div class="record-year">
-                    Current
-                </div>
-
-                <div class="record-content">
-
-                    <strong>
-                        Canyon Trail Tennis
-                    </strong>
-
-                    <span>
-                        Community-based tennis programming providing youth
-                        and adult instruction, player development, match play,
-                        and competitive opportunities.
-                    </span>
-
-                </div>
-
-            </li>
-
-
-            <li>
-
-                <div class="record-year">
-                    Current
-                </div>
-
-                <div class="record-content">
-
-                    <strong>
-                        Junior Team Tennis — 1 Team → 3 Teams
-                    </strong>
-
-                    <span>
-                        Started the original Crouching Tiger Tennis Junior
-                        Team Tennis program and transitioned it into Canyon
-                        Trail Tennis, growing from one team to three teams
-                        under my coordination.
-                    </span>
-
-                </div>
-
-            </li>
-
-
-            <li>
-
-                <div class="record-year">
-                    2025
-                </div>
-
-                <div class="record-content">
-
-                    <strong>
-                        USTA East Bay/Tri-Valley 10U Orange Ball Champions
-                    </strong>
-
-                    <span>
-                        Coached the Junior Team Tennis team to the
-                        East Bay/Tri-Valley championship and advancement
-                        to sectional competition.
-                    </span>
-
-                </div>
-
-            </li>
-
-        </ul>
-
-
-        <!-- ===============================
-             AAU BASKETBALL
-        =============================== -->
-
-        <div class="record-header" style="margin-top: 75px;">
-
-            <div>
-
-                <p class="record-label">
-                    2018–2023
-                </p>
-
-                <h3>
-                    Community AAU Basketball
-                </h3>
-
-            </div>
-
-            <p class="record-summary">
-                Before expanding my community programming into tennis,
-                I developed independently organized AAU basketball programs
-                that operated alongside and complemented the high school
-                programs I was coaching. These programs provided additional
-                off-season instruction, competition, and player development
-                for local youth, including athletes who otherwise may not
-                have had access to organized club basketball.
-            </p>
-
-        </div>
-
-
-        <ul class="record-list">
-
-
-            <!-- WEST COCO ATHLETICS -->
-
-            <li>
-
-                <div class="record-year">
-                    2022–2023
-                </div>
-
-                <div class="record-content">
-
-                    <strong>
-                        West COCO Athletics
-                    </strong>
-
-                    <span>
-        My community basketball programming began with Richmond Tenacity,
-        an independently organized AAU program created to provide additional
-        off-season training, competition, and player development alongside
-        the high school programs I was coaching. After programming was
-        disrupted by the COVID-19 pandemic, the concept returned and was
-        rebranded as West CoCo Athletics, continuing the same broader mission
-        of expanding access to organized basketball opportunities for local youth.
-                    </span>
-
-                </div>
-
-            </li>
-
-
-            <!-- RICHMOND TENACITY -->
-
-            <li>
-
-                <div class="record-year">
-                    2018–2021
-                </div>
-
-                <div class="record-content">
-
-                    <strong>
-                        Richmond Tenacity
-                    </strong>
-
-                    <span>
-                        Founded and operated a community-based AAU basketball
-                        program that complemented my high school coaching work
-                        by providing additional off-season training, team
-                        competition, and development opportunities for youth
-                        who may not otherwise have had access to club basketball.
-                    </span>
-
-                </div>
-
-            </li>
-
-        </ul>
-
-    </div>
-
-</section>
 
         <!-- ===============================
              PLAYING CAREER
@@ -1905,6 +1979,8 @@
                     and collegiate tennis player.
                 </p>
 
+
+                <!-- COLLEGIATE TENNIS -->
 
                 <div class="playing-feature">
 
@@ -1927,8 +2003,29 @@
                 </div>
 
 
-                <ul class="record-list">
+                <!-- THREE COLLEGIATE PHOTO SLOTS -->
 
+                <div class="playing-photo-grid">
+
+                    <img
+                        src="DVCTEN11.jpeg"
+                        alt="Jeffrey Jaymot collegiate tennis playing career"
+                        class="playing-photo">
+
+                    <img
+                        src="ojaiwin.JPEG"
+                        alt="Jeffrey Jaymot competing in collegiate tennis"
+                        class="playing-photo">
+
+                    <img
+                        src="lastmatch.JPEG"
+                        alt="Jeffrey Jaymot Diablo Valley College tennis"
+                        class="playing-photo">
+
+                </div>
+
+
+                <ul class="record-list">
 
                     <li>
 
@@ -2099,8 +2196,19 @@
                 </div>
 
 
-                <ul class="record-list">
+                <!-- HIGH SCHOOL ATHLETICS PHOTO -->
 
+                <div class="high-school-photo-wrap">
+
+                    <img
+                        src="PVBBALL.jpeg"
+                        alt="Jeffrey Jaymot high school athletics at Pinole Valley High School"
+                        class="high-school-photo">
+
+                </div>
+
+
+                <ul class="record-list">
 
                     <li>
 
@@ -2184,108 +2292,6 @@
 
         </section>
 
-
-        <!-- ===============================
-             COACHING PHILOSOPHY
-        =============================== -->
-
-        <section class="section section-light">
-
-            <div class="container">
-
-                <h2 class="section-title">
-                    Coaching Philosophy
-                </h2>
-
-                <p class="section-intro">
-                    Competitive outcomes matter, but sustainable programs
-                    are built through development, standards, relationships,
-                    and strong systems.
-                </p>
-
-
-                <div class="philosophy-grid">
-
-
-                    <div class="philosophy-item">
-
-                        <h3>
-                            Develop the Athlete
-                        </h3>
-
-                        <p>
-                            Teach fundamentals, decision-making, confidence,
-                            accountability, and competitive independence
-                            through purposeful practice and experience.
-                        </p>
-
-                    </div>
-
-
-                    <div class="philosophy-item">
-
-                        <h3>
-                            Build the Program
-                        </h3>
-
-                        <p>
-                            Successful teams depend on more than game-day
-                            coaching. Recruitment, culture, communication,
-                            access, organization, and long-term continuity
-                            all matter.
-                        </p>
-
-                    </div>
-
-
-                    <div class="philosophy-item">
-
-                        <h3>
-                            Create Opportunity
-                        </h3>
-
-                        <p>
-                            Sport can become a meaningful developmental
-                            environment when athletes have consistent access,
-                            clear expectations, supportive relationships,
-                            and opportunities to compete.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ===============================
-             CTA
-        =============================== -->
-
-        <section class="cta">
-
-            <div class="container">
-
-                <h2>
-                    Building competitive programs through development,
-                    opportunity, and leadership.
-                </h2>
-
-                <p>
-                    Explore my broader professional experience, education,
-                    research, program development, and qualifications.
-                </p>
-
-                <a href="cv.html" class="btn">
-                    View CV & Resume
-                </a>
-
-            </div>
-
-        </section>
-
     </main>
 
 
@@ -2308,6 +2314,91 @@
         </div>
 
     </footer>
+
+
+    <!-- ===============================
+         MOBILE NAVIGATION
+    =============================== -->
+
+    <script>
+
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+
+            menuToggle.addEventListener('click', () => {
+
+                const isOpen = navLinks.classList.toggle('open');
+
+                menuToggle.classList.toggle(
+                    'active',
+                    isOpen
+                );
+
+                menuToggle.setAttribute(
+                    'aria-expanded',
+                    isOpen ? 'true' : 'false'
+                );
+
+                menuToggle.setAttribute(
+                    'aria-label',
+                    isOpen
+                        ? 'Close navigation menu'
+                        : 'Open navigation menu'
+                );
+
+            });
+
+
+            navLinks.querySelectorAll('a').forEach(link => {
+
+                link.addEventListener('click', () => {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                });
+
+            });
+
+
+            window.addEventListener('resize', () => {
+
+                if (window.innerWidth > 900) {
+
+                    navLinks.classList.remove('open');
+
+                    menuToggle.classList.remove('active');
+
+                    menuToggle.setAttribute(
+                        'aria-expanded',
+                        'false'
+                    );
+
+                    menuToggle.setAttribute(
+                        'aria-label',
+                        'Open navigation menu'
+                    );
+
+                }
+
+            });
+
+        }
+
+    </script>
 
 </body>
 

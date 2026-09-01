@@ -361,55 +361,94 @@
             font-size: 1rem;
         }
 
-        /* ===============================
-           PLAYING CAREER PHOTOS
-        =============================== */
+       /* ===============================
+   PLAYING CAREER PHOTOS
+=============================== */
 
-        /* Diablo Valley College photo row */
+/* Diablo Valley College photo row */
+.playing-photo-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    max-width: 1000px;
+    margin: 35px 0 45px;
+}
 
-        .playing-photo-grid {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            gap: 10px;
-            max-width: 1000px;
-            margin: 35px 0 45px;
-        }
+.playing-photo {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    background: #f2f2f2;
+}
 
-        .playing-photo {
-            width: 100%;
-            max-height: 280px;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #e1e1e1;
-            background: #f2f2f2;
-        }
+/* First DVC photo: show the entire image */
+.playing-photo-grid .playing-photo:first-child {
+    object-fit: contain;
+    object-position: center;
+    background: #f7f7f7;
+}
 
-        /* Pinole Valley High School photo */
+/* Pinole Valley High School photo */
+.high-school-photo-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 35px 0 45px;
+}
 
-        .high-school-photo-wrap {
-            display: flex;
-            justify-content: center;
-            margin: 35px 0 45px;
-        }
+.high-school-photo {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 8px;
+    border: 1px solid #e1e1e1;
+    background: #f2f2f2;
+}
 
-        .high-school-photo {
-            width: 320px;
-            max-width: 90%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 8px;
-            border: 1px solid #e1e1e1;
-            background: #f2f2f2;
-        }
+@media (min-width: 768px) {
 
-        @media (min-width: 768px) {
+    .high-school-photo {
+        width: 380px;
+    }
 
-            .high-school-photo {
-                width: 380px;
-            }
+}
 
-        }
+/* Mobile */
+@media (max-width: 600px) {
+
+    .playing-photo-grid {
+        flex-direction: column;
+        gap: 10px;
+        margin: 28px 0 38px;
+    }
+
+    .playing-photo {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        object-position: center;
+    }
+
+    .high-school-photo-wrap {
+        margin: 28px 0 38px;
+    }
+
+    .high-school-photo {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+}
 
         /* ===============================
            FOOTER
